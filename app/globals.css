@@ -1,1 +1,39 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+    :root {
+        --background: white;
+        --foreground: black;
+    }
+
+    .dark {
+        --background: black;
+        --foreground: white;
+    }
+
+    body {
+        background-color: var(--background);
+        color: var(--foreground);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-montserrat-alternates);
+    }
+
+    .nav--link-main {
+        font-family: var(--font-comforter-brush);
+        text-transform: none;
+        font-size: 1.5rem;
+        /* 24px */
+        color: #A2DB8E;
+        font-weight: 400;
+        margin: 0;
+        margin-top: 5px;
+    }
+}
