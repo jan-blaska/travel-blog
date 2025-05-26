@@ -5,11 +5,13 @@
     :root {
         --background: white;
         --foreground: black;
+        --green: #A2DB8E;
     }
 
     .dark {
         --background: black;
         --foreground: white;
+        --green: #A2DB8E;
     }
 
     body {
@@ -29,9 +31,8 @@
     .nav--link-main {
         font-family: var(--font-comforter-brush);
         text-transform: none;
-        font-size: 1.5rem;
-        /* 24px */
-        color: #A2DB8E;
+        font-size: 2.25rem;
+        color: var(--green);
         font-weight: 400;
         margin: 0;
         margin-top: 5px;

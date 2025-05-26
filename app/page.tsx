@@ -3,7 +3,7 @@ import ImageVanInNationalPark from "@/public/van-in-national-park.jpg"
 export default function Home() {
   return (
     <main>
-      <section className="flex flex-col-reverse items-center justify-between gap-8 px-6 py-12 mx-auto md:flex-row max-w-7xl">
+      <section className="flex flex-col-reverse items-center w-[95%] justify-between gap-8 py-12 mx-auto md:flex-row max-w-5xl">
 
         <div className="flex-1 space-y-6">
 

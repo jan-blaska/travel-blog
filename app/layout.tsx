@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ThemeProvider } from 'next-themes'
 import type { Metadata } from 'next'
 import ThemeSwitcher from "./components/themeSwitcher";
+import Navbar from "./components/navbar/navbar";
 
 const albertSans = Albert_Sans({
   subsets: ["latin"],
@@ -40,14 +41,7 @@ export default function RootLayout({
       <body className={`${albertSans.className} ${montserratAlternates.variable} ${comforterBrush.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <header>
-            <nav>
-              <ul className="flex items-center justify-between">
-                <li><Link href="/">Home</Link></li>
-                <li><Link className="nav--link-main" href="/">Jan Blaška Travel Diary</Link></li>
-                <li><Link href="/about">About</Link></li>
-                <ThemeSwitcher />
-              </ul>
-            </nav>
+            <Navbar />
           </header>
           {children}
         </ThemeProvider>

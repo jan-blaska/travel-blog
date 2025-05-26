@@ -18,11 +18,11 @@ const ThemeSwitcher = () => {
     }
 
     if (resolvedTheme === 'dark') {
-        return <FiSun onClick={() => setTheme('light')} />
+        return <FiSun className="cursor-pointer" onClick={() => setTheme('light')} />
     }
 
     if (resolvedTheme === 'light') {
-        return <FiMoon onClick={() => setTheme('dark')} />
+        return <FiMoon className="cursor-pointer" onClick={() => setTheme('dark')} />
     }
 }
 
