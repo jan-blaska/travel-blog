@@ -23,7 +23,7 @@ const Navbar = () => {
     }, [isOpen]);
 
     return (
-        <nav className="relative flex justify-center h-24 shadow-md dark:shadow-[0_6px_6px_rgba(255,255,255,0.1)]">
+        <nav className="relative flex justify-center h-24 shadow-md dark:shadow-[0_6px_6px_rgba(255,255,255,0.1)] z-50">
 
             {/* Mobile menu */}
             <ul className="flex md:hidden w-[95%] items-center justify-between">
@@ -34,7 +34,7 @@ const Navbar = () => {
                         <span className={`block h-1 bg-(--foreground) transform transition duration-300 ease-in-out origin-center ${isOpen ? '-rotate-45 -translate-y-[10px] w-8' : 'w-6'}`} />
                     </button>
                 </li>
-                <li><Link className="nav--link-main" href="/">Travel Blog</Link></li>
+                <li><Link className="font-comforter text-(--green) text-3xl" href="/">Jan Blaška Travel Blog</Link></li>
                 <li><ThemeSwitcher /></li>
             </ul>
             <div
@@ -83,7 +83,7 @@ const Navbar = () => {
 
             {/* Desktop menu */}
             <ul className="hidden md:flex w-[95%] items-center justify-between max-w-5xl">
-                <li><Link className="nav--link-main" href="/">Travel Blog</Link></li>
+                <li><Link className="font-comforter text-(--green) text-4xl" href="/">Jan Blaška Travel Blog</Link></li>
                 <div className="flex h-full">
                     {[
                         { href: "/about", label: "ABOUT ME" },

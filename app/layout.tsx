@@ -1,10 +1,9 @@
 import "./globals.css";
-import { Albert_Sans, Montserrat_Alternates, Comforter_Brush } from "next/font/google"
-import Link from "next/link";
+import { Albert_Sans, Montserrat_Alternates, Comforter_Brush, Barlow_Condensed } from "next/font/google"
 import { ThemeProvider } from 'next-themes'
 import type { Metadata } from 'next'
-import ThemeSwitcher from "./components/themeSwitcher";
 import Navbar from "./components/navbar/navbar";
+import Footer from "./components/footer/footer";
 
 const albertSans = Albert_Sans({
   subsets: ["latin"],
@@ -25,6 +24,13 @@ const comforterBrush = Comforter_Brush({
   variable: "--font-comforter-brush"
 });
 
+const barlowCondensed = Barlow_Condensed({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-barlow-condensed"
+})
+
 export const metadata: Metadata = {
   title: 'Travel Blog',
   description: 'travel diaries, travel tips',
@@ -38,12 +44,15 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning lang="en">
-      <body className={`${albertSans.className} ${montserratAlternates.variable} ${comforterBrush.variable}`}>
+      <body className={`${albertSans.className} ${montserratAlternates.variable} ${comforterBrush.variable} ${barlowCondensed.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <header>
             <Navbar />
           </header>
           {children}
+          <footer>
+            <Footer />
+          </footer>
         </ThemeProvider>
       </body>
     </html >

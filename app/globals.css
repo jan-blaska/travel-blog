@@ -6,12 +6,16 @@
         --background: white;
         --foreground: black;
         --green: #A2DB8E;
+        --orange: #FFB932;
+        --footer-background: #3D3A33;
     }
 
     .dark {
         --background: black;
         --foreground: white;
         --green: #A2DB8E;
+        --orange: #FFB932;
+        --footer-background: #3D3A33;
     }
 
     body {
@@ -19,22 +23,15 @@
         color: var(--foreground);
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    .font-montserrat {
         font-family: var(--font-montserrat-alternates);
     }
 
-    .nav--link-main {
+    .font-comforter {
         font-family: var(--font-comforter-brush);
-        text-transform: none;
-        font-size: 2.25rem;
-        color: var(--green);
-        font-weight: 400;
-        margin: 0;
-        margin-top: 5px;
+    }
+
+    .font-barlow-condensed {
+        font-family: var(--font-barlow-condensed);
     }
 }
