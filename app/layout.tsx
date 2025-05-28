@@ -2,8 +2,8 @@ import "./globals.css";
 import { Albert_Sans, Montserrat_Alternates, Comforter_Brush, Barlow_Condensed } from "next/font/google"
 import { ThemeProvider } from 'next-themes'
 import type { Metadata } from 'next'
-import Navbar from "./components/navbar/navbar";
-import Footer from "./components/footer/footer";
+import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
 
 const albertSans = Albert_Sans({
   subsets: ["latin"],
