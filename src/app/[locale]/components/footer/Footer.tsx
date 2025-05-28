@@ -1,12 +1,14 @@
 "use client"
 
-import useWindowWidth from "@/app/custom-hooks/useWindowWidth";
+import useWindowWidth from "@/src/app/[locale]/custom-hooks/useWindowWidth";
 import Link from "next/link"
 import { useTheme } from 'next-themes'
+import { useTranslations } from 'next-intl'
 
 export default function Footer() {
     const width = useWindowWidth();
     const { resolvedTheme } = useTheme()
+    const t = useTranslations('Footer')
 
     return (
         <footer>
@@ -18,15 +20,15 @@ export default function Footer() {
                 <div className="flex flex-col max-w-5xl w-[95%] justify-center">
                     <div className="flex flex-col sm:flex-row justify-between">
                         <div className="flex flex-col justify-between gap-4 sm:w-3/5">
-                            <span className="font-comforter text-4xl md:text-5xl">Jan Blaška Travel Blog</span>
+                            <span className="font-comforter text-4xl md:text-5xl">{t('Home')}</span>
                             <div className="flex flex-col md:flex-row justify-between gap-4 md:gap-0">
                                 <div className="flex flex-col text-xl">
-                                    <Link href="/about-me">About me</Link>
-                                    <Link href="#">Destinations</Link>
-                                    <Link href="/contact">Contact</Link>
+                                    <Link href="/about-me">{t('AboutMe')}</Link>
+                                    <Link href="#">{t('Adventures')}</Link>
+                                    <Link href="/contact">{t('Contact')}</Link>
                                 </div>
                                 <div className="flex flex-col items-start md:items-center gap-2">
-                                    <span>Connect with me on social media!</span>
+                                    <span>{t('SocialMediaPrompt')}</span>
                                     <div className="flex gap-2">
                                         <a className="bg-white w-8 h-8 rounded-full p-1"
                                             href="https://www.facebook.com/honzablaska">
@@ -40,7 +42,7 @@ export default function Footer() {
                                     </div>
                                 </div>
                             </div>
-                            <p>© 2025 Jan Blaska</p>
+                            <p>{t('Copyright')}</p>
                         </div>
                         <div className="hidden sm:w-2/5 sm:justify-end sm:flex justify-center">
                             <img className="w-48 rounded-3xl" src="/footer/me-column.jpg" alt="jan blaska standing by the column" />
@@ -49,6 +51,5 @@ export default function Footer() {
                 </div>
             </div>
         </footer>
-
     )
 }

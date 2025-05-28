@@ -1,0 +1,39 @@
+{
+    "Navbar": {
+        "AboutMe": "About me",
+        "Contact": "Contact",
+        "Adventures": "Adventures",
+        "Home": "Jan Blaska Travel Blog"
+    },
+    "Footer": {
+        "AboutMe": "About me",
+        "Contact": "Contact",
+        "Adventures": "Adventures",
+        "Home": "Jan Blaska Travel Blog",
+        "SocialMediaPrompt": "Connect with me on social media!",
+        "Copyright": "© 2025 Jan Blaska"
+    },
+    "HomePage": {
+        "Title": {
+            "Text": "my Travel Blog",
+            "ButtonText": "Explore",
+            "Name": "Jan",
+            "Surname": "Blaska"
+        }, 
+        "Greeting": {
+            "Hello": "Hello! ",
+            "MyNameIs": "My name is",
+            "JanBlaska": "Jan Blaska.",
+            "Welcome": "Welcome TO my travel blog!",
+            "MakeATea": "Make a tea or a coffee, and ",
+            "LetsExplore": "lets explore with me some adventure 📷."
+        },
+        "Map": {
+            "Prompt": "Click on the country you are interested in"
+        },
+        "Citation": {
+            "Text": "The journey of a thousand miles begins with one step.",
+            "Author": "Lao Tzu"
+        }
+    }
+}

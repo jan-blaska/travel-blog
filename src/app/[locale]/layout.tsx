@@ -4,6 +4,9 @@ import { ThemeProvider } from 'next-themes'
 import type { Metadata } from 'next'
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
+import { NextIntlClientProvider, hasLocale } from 'next-intl';
+import { notFound } from 'next/navigation';
+import { routing } from '../../i18n/routing';
 
 const albertSans = Albert_Sans({
   subsets: ["latin"],
@@ -37,23 +40,32 @@ export const metadata: Metadata = {
 }
 
 
-export default function RootLayout({
+export default async function LocaleLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
   return (
-    <html suppressHydrationWarning lang="en">
+    <html suppressHydrationWarning lang={locale}>
       <body className={`${albertSans.className} ${montserratAlternates.variable} ${comforterBrush.variable} ${barlowCondensed.variable}`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <header>
-            <Navbar />
-          </header>
-          {children}
-          <footer>
-            <Footer />
-          </footer>
-        </ThemeProvider>
+        <NextIntlClientProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <header>
+              <Navbar />
+            </header>
+            {children}
+            <footer>
+              <Footer />
+            </footer>
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html >
   );

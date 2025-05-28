@@ -1,0 +1,39 @@
+{
+    "Navbar": {
+        "AboutMe": "O mně",
+        "Contact": "Kontakt",
+        "Adventures": "Dobrodružství",
+        "Home": "Jan Blaška Cestovatelský Deník"
+    },
+    "Footer": {
+        "AboutMe": "O mně",
+        "Contact": "Kontakt",
+        "Adventures": "Dobrodružství",
+        "Home": "Jan Blaška Cestovatelský Deník",
+        "SocialMediaPrompt": "Propojte se se mnou na sociálních sítích!",
+        "Copyright": "© 2025 Jan Blaška"
+    },
+    "HomePage": {
+        "Title": {
+            "Text": "můj cestovatelský deník",
+            "ButtonText": "Začít",
+            "Name": "Jan",
+            "Surname": "Blaška"
+        },
+        "Greeting": {
+            "Hello": "Ahoj! ",
+            "MyNameIs": "Jmenuji se",
+            "JanBlaska": "Jan Blaška.",
+            "Welcome": "Vítejte na mém cestovatelském deníku!",
+            "MakeATea": "Uvařte si čaj nebo kávu a ",
+            "LetsExplore": "pojď se mnou za dobrodružstvím 📷."
+        },
+        "Map": {
+            "Prompt": "Klikněte na zemi, která Vás zajímá"
+        },
+        "Citation": {
+            "Text": "Cesta dlouhá tisíc mil začíná prvním krokem.",
+            "Author": "Lao Tzu"
+        }
+    }
+}

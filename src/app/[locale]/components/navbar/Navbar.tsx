@@ -3,22 +3,25 @@
 import Link from "next/link"
 import ThemeSwitcher from "../themeSwitcher"
 import navbarAdventures from "./navbar-adventures"
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
+import { useTranslations } from 'next-intl'
+import LocaleSwitcher from "../localeSwitcher"
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const toggleMenu = () => setIsOpen(!isOpen);
-    const closeMenu = () => setIsOpen(false);
+    const [isOpen, setIsOpen] = useState(false)
+    const toggleMenu = () => setIsOpen(!isOpen)
+    const closeMenu = () => setIsOpen(false)
+    const t = useTranslations('Navbar')
 
     useEffect(() => {
         if (isOpen) {
-            document.body.classList.add('overflow-hidden');
+            document.body.classList.add('overflow-hidden')
         } else {
-            document.body.classList.remove('overflow-hidden');
+            document.body.classList.remove('overflow-hidden')
         }
 
         return () => {
-            document.body.classList.remove('overflow-hidden'); // cleanup
+            document.body.classList.remove('overflow-hidden') // cleanup
         };
     }, [isOpen]);
 
@@ -34,7 +37,7 @@ const Navbar = () => {
                         <span className={`block h-1 bg-(--foreground) transform transition duration-300 ease-in-out origin-center ${isOpen ? '-rotate-45 -translate-y-[10px] w-8' : 'w-6'}`} />
                     </button>
                 </li>
-                <li><Link className="font-comforter text-(--green) text-3xl" href="/">Jan Blaška Travel Blog</Link></li>
+                <li><Link className="font-comforter text-(--green) text-3xl" href="/">{t('Home')}</Link></li>
                 <li><ThemeSwitcher /></li>
             </ul>
             <div
@@ -44,11 +47,11 @@ const Navbar = () => {
                 <div className="w-full h-full relative bg-(--background)">
                     <ul className="absolute flex flex-col text-lg w-full z-20 pt-4">
                         <li className="p-2 text-blue-600 dark:text-(--green) uppercase font-bold"><Link href="/about" onClick={closeMenu} >
-                            About Me
+                            {t('AboutMe')}
                         </Link></li>
                         <div className="p-2">
                             <span className="uppercase font-bold">
-                                Adventures
+                                {t('Adventures')}
                             </span>
                             {navbarAdventures.map((continent) => {
                                 return <div key={continent.continent} className="pl-4 py-2">
@@ -72,7 +75,7 @@ const Navbar = () => {
                         </div>
 
                         <li className="p-2 text-blue-600 dark:text-(--green) uppercase font-bold"><Link href="/contact" onClick={closeMenu}>
-                            Contact
+                            {t('Contact')}
                         </Link></li>
                     </ul>
                     <div className="absolute inset-0 z-10 bg-[url('/world-map-mobile.jpg')] bg-cover bg-center opacity-30 dark:opacity-60" />
@@ -83,16 +86,17 @@ const Navbar = () => {
 
             {/* Desktop menu */}
             <ul className="hidden md:flex w-[95%] items-center justify-between max-w-5xl">
-                <li><Link className="font-comforter text-(--green) text-4xl" href="/">Jan Blaška Travel Blog</Link></li>
+                <li><Link className="font-comforter text-(--green) text-4xl" href="/">{t('Home')}</Link></li>
+                <LocaleSwitcher />
                 <div className="flex h-full">
                     {[
-                        { href: "/about", label: "ABOUT ME" },
-                        { href: "/contact", label: "CONTACT" },
+                        { href: "/about", label: t('AboutMe') },
+                        { href: "/contact", label: t('Contact') },
                     ].map(({ href, label }) => (
                         <li key={href} className="h-full">
                             <Link
                                 href={href}
-                                className="group relative h-full px-6 flex items-center justify-center"
+                                className="group relative h-full px-6 flex items-center justify-center uppercase"
                             >
                                 {label}
                                 <span
@@ -103,8 +107,8 @@ const Navbar = () => {
                     ))}
                     <li className="group h-full" onMouseEnter={() => document.body.classList.add('overflow-hidden')}
                         onMouseLeave={() => document.body.classList.remove('overflow-hidden')}>
-                        <span className="group relative h-full px-6 flex items-center justify-center">
-                            ADVENTURES
+                        <span className="group relative h-full px-6 flex items-center justify-center uppercase">
+                            {t('Adventures')}
                             <span
                                 className="absolute bottom-0 left-0 h-1 w-full scale-x-0 transform bg-(--green) transition-transform duration-300 origin-center group-hover:scale-x-100"
                             ></span>
@@ -143,4 +147,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar;
+export default Navbar
