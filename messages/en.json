@@ -3,7 +3,33 @@
         "AboutMe": "About me",
         "Contact": "Contact",
         "Adventures": "Adventures",
-        "Home": "Jan Blaska Travel Blog"
+        "Home": "Jan Blaska Travel Blog",
+        "AdventuresList": {
+            "continent": {
+                "europe": "Europe",
+                "asia": "Asia",
+                "africa": "Africa",
+                "north-america": "North America"
+            },
+            "country": {
+                "albania": "Albania",
+                "finland": "Finland",
+                "france": "France",
+                "greece": "Greece",
+                "norway": "Norway",
+                "portugal": "Portugal",
+                "romania": "Romania",
+                "spain": "Spain",
+                "switzerland": "Switzerland",
+                "united-kingdom": "United Kingdom",
+                "israel": "Israel",
+                "jordan": "Jordan",
+                "philippines": "Philippines",
+                "turkey": "Turkey",
+                "morocco": "Morocco",
+                "dominican-republic": "Dominican Republic"
+            }
+        }
     },
     "Footer": {
         "AboutMe": "About me",
@@ -19,7 +45,7 @@
             "ButtonText": "Explore",
             "Name": "Jan",
             "Surname": "Blaska"
-        }, 
+        },
         "Greeting": {
             "Hello": "Hello! ",
             "MyNameIs": "My name is",

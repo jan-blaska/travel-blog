@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import ThemeSwitcher from "../themeSwitcher"
-import navbarAdventures from "./navbar-adventures"
+import navbarAdventures from "./navbarAdventures"
 import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import LocaleSwitcher from "../localeSwitcher"
@@ -54,17 +54,17 @@ const Navbar = () => {
                                 {t('Adventures')}
                             </span>
                             {navbarAdventures.map((continent) => {
-                                return <div key={continent.continent} className="pl-4 py-2">
-                                    <span>{continent.continent}</span>
+                                return <div key={continent.continentKey} className="pl-4 py-2">
+                                    <span>{t(continent.continentKey)}</span>
                                     <ul className="flex flex-wrap pl-4 gap-x-2">
                                         {continent.countries.map((country) => {
                                             return (
-                                                <li key={country.name}>
+                                                <li key={country.translationKey}>
                                                     <Link
-                                                        href={`/adventures/${continent.continent.toLowerCase()}/${country.linkTo}`}
+                                                        href={`/adventures/${continent.continentKey.toLowerCase()}/${country.linkTo}`}
                                                         className="block text-blue-600 dark:text-(--green) p-1"
                                                     >
-                                                        {country.name}
+                                                        {t(country.translationKey)}
                                                     </Link>
                                                 </li>
                                             )
@@ -118,17 +118,17 @@ const Navbar = () => {
                                 <div className="absolute inset-0 z-10 bg-[url('/world-map-money-border.jpg')] bg-cover bg-center opacity-30 dark:opacity-90" />
                                 <div className="absolute max-w-5xl w-[95%] z-20 flex gap-6 flex-col left-1/2 -translate-x-1/2">
                                     {navbarAdventures.map((continent) => {
-                                        return <div key={continent.continent}>
-                                            <span className="uppercase text-2xl font-bold">{continent.continent}</span>
+                                        return <div key={continent.continentKey}>
+                                            <span className="uppercase text-2xl font-bold">{t(continent.continentKey)}</span>
                                             <ul className="flex flex-wrap font-bold text-4xl">
                                                 {continent.countries.map((country) => {
                                                     return (
-                                                        <li key={country.name}>
+                                                        <li key={country.translationKey}>
                                                             <Link
-                                                                href={`/adventures/${continent.continent.toLowerCase()}/${country.linkTo}`}
+                                                                href={`/adventures/${continent.continentKey.toLowerCase()}/${country.linkTo}`}
                                                                 className="block px-4 py-2 dark:hover:text-(--green) hover:bg-(--green) dark:hover:bg-transparent"
                                                             >
-                                                                {country.name}
+                                                                {t(country.translationKey)}
                                                             </Link>
                                                         </li>
                                                     )
