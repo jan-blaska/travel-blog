@@ -1,4 +1,9 @@
 {
+    "NotFound": {
+        "Title": "404 - Stránka nenalezena",
+        "Prompt": "Zkontrolujte URL nebo se vraťte na ",
+        "HomePage": "hlavní stránku"
+    },
     "Navbar": {
         "AboutMe": "O mně",
         "Contact": "Kontakt",

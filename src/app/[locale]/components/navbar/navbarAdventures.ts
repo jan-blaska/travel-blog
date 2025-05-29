@@ -1,38 +1,42 @@
 const navbarAdventures = [
     {
-        continentKey: "AdventuresList.continent.europe",
+        translationKey: "AdventuresList.continent.europe",
+        params: "europe",
         countries: [
-            { translationKey: "AdventuresList.country.albania", linkTo: "albania" },
-            { translationKey: "AdventuresList.country.finland", linkTo: "finland" },
-            { translationKey: "AdventuresList.country.france", linkTo: "france" },
-            { translationKey: "AdventuresList.country.greece", linkTo: "greece" },
-            { translationKey: "AdventuresList.country.norway", linkTo: "norway" },
-            { translationKey: "AdventuresList.country.portugal", linkTo: "portugal" },
-            { translationKey: "AdventuresList.country.romania", linkTo: "romania" },
-            { translationKey: "AdventuresList.country.spain", linkTo: "spain" },
-            { translationKey: "AdventuresList.country.switzerland", linkTo: "switzerland" },
-            { translationKey: "AdventuresList.country.united-kingdom", linkTo: "united-kingdom" }
+            { translationKey: "AdventuresList.country.albania", params: "albania" },
+            { translationKey: "AdventuresList.country.finland", params: "finland" },
+            { translationKey: "AdventuresList.country.france", params: "france" },
+            { translationKey: "AdventuresList.country.greece", params: "greece" },
+            { translationKey: "AdventuresList.country.norway", params: "norway" },
+            { translationKey: "AdventuresList.country.portugal", params: "portugal" },
+            { translationKey: "AdventuresList.country.romania", params: "romania" },
+            { translationKey: "AdventuresList.country.spain", params: "spain" },
+            { translationKey: "AdventuresList.country.switzerland", params: "switzerland" },
+            { translationKey: "AdventuresList.country.united-kingdom", params: "united-kingdom" }
         ]
     },
     {
-        continentKey: "AdventuresList.continent.asia",
+        translationKey: "AdventuresList.continent.asia",
+        params: "asia",
         countries: [
-            { translationKey: "AdventuresList.country.israel", linkTo: "israel" },
-            { translationKey: "AdventuresList.country.jordan", linkTo: "jordan" },
-            { translationKey: "AdventuresList.country.philippines", linkTo: "philippines" },
-            { translationKey: "AdventuresList.country.turkey", linkTo: "turkey" }
+            { translationKey: "AdventuresList.country.israel", params: "israel" },
+            { translationKey: "AdventuresList.country.jordan", params: "jordan" },
+            { translationKey: "AdventuresList.country.philippines", params: "philippines" },
+            { translationKey: "AdventuresList.country.turkey", params: "turkey" }
         ]
     },
     {
-        continentKey: "AdventuresList.continent.africa",
+        translationKey: "AdventuresList.continent.africa",
+        params: "africa",
         countries: [
-            { translationKey: "AdventuresList.country.morocco", linkTo: "morocco" }
+            { translationKey: "AdventuresList.country.morocco", params: "morocco" }
         ]
     },
     {
-        continentKey: "AdventuresList.continent.north-america",
+        translationKey: "AdventuresList.continent.north-america",
+        params: "north-america",
         countries: [
-            { translationKey: "AdventuresList.country.dominican-republic", linkTo: "dominican-republic" }
+            { translationKey: "AdventuresList.country.dominican-republic", params: "dominican-republic" }
         ]
     }
 ];

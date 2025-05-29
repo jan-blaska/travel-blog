@@ -10,7 +10,7 @@ export const articlesObject = {
                 imageUrl: "https://drive.google.com/uc?id=1LyojTH45h3rvV4Y1TnoXvy_q4ZTCAlzT",
                 imageAlt: "Photo of the Turkey master piece - mosque Hagia Sofia.",
                 description: "Erasmus study exchange",
-                linkTo: "/destination/turkey/istanbul"
+                params: "/destination/turkey/istanbul"
             }
         ]
     },
@@ -25,7 +25,7 @@ export const articlesObject = {
                 imageUrl: "https://drive.google.com/uc?id=1LiWEnH06fpQYqGhjEv7MLCBksq3qu_Eb",
                 imageAlt: "Beautiful beach in the Dominican republic.",
                 description: "The escape from the winter.",
-                linkTo: "/destination/dominican-republic/puerto-plata"
+                params: "/destination/dominican-republic/puerto-plata"
             }
         ]
     },
@@ -40,7 +40,7 @@ export const articlesObject = {
                 imageUrl: "https://drive.google.com/uc?id=1zr0zUF6lupbcwmxPrNl-KO6b1EcMIyZ4",
                 imageAlt: "Ship with swiss flag.",
                 description: "Hitchhiking adventure",
-                linkTo: "/destination/switzerland/switzerland"
+                params: "/destination/switzerland/switzerland"
             }
         ]
     },

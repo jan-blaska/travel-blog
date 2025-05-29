@@ -54,14 +54,14 @@ const Navbar = () => {
                                 {t('Adventures')}
                             </span>
                             {navbarAdventures.map((continent) => {
-                                return <div key={continent.continentKey} className="pl-4 py-2">
-                                    <span>{t(continent.continentKey)}</span>
+                                return <div key={continent.params} className="pl-4 py-2">
+                                    <span>{t(continent.translationKey)}</span>
                                     <ul className="flex flex-wrap pl-4 gap-x-2">
                                         {continent.countries.map((country) => {
                                             return (
-                                                <li key={country.translationKey}>
+                                                <li key={country.params}>
                                                     <Link
-                                                        href={`/adventures/${continent.continentKey.toLowerCase()}/${country.linkTo}`}
+                                                        href={`/adventures/${continent.translationKey.toLowerCase()}/${country.params}`}
                                                         className="block text-blue-600 dark:text-(--green) p-1"
                                                     >
                                                         {t(country.translationKey)}
@@ -105,44 +105,48 @@ const Navbar = () => {
                             </Link>
                         </li>
                     ))}
-                    <li className="group h-full" onMouseEnter={() => document.body.classList.add('overflow-hidden')}
-                        onMouseLeave={() => document.body.classList.remove('overflow-hidden')}>
-                        <span className="group relative h-full px-6 flex items-center justify-center uppercase">
+                    <li className="group h-full"
+                    >
+                        <button
+                            onClick={toggleMenu}
+                            className="group relative h-full cursor-pointer px-6 flex items-center justify-center uppercase">
                             {t('Adventures')}
                             <span
                                 className="absolute bottom-0 left-0 h-1 w-full scale-x-0 transform bg-(--green) transition-transform duration-300 origin-center group-hover:scale-x-100"
                             ></span>
-                        </span>
-                        <div className="left-0 z-10 absolute w-full justify-center hidden h-[calc(100vh-6rem)] group-hover:flex transition-transform duration-1000">
-                            <div className="w-full h-full relative bg-(--background) pt-6 ">
-                                <div className="absolute inset-0 z-10 bg-[url('/world-map-money-border.jpg')] bg-cover bg-center opacity-30 dark:opacity-90" />
-                                <div className="absolute max-w-5xl w-[95%] z-20 flex gap-6 flex-col left-1/2 -translate-x-1/2">
-                                    {navbarAdventures.map((continent) => {
-                                        return <div key={continent.continentKey}>
-                                            <span className="uppercase text-2xl font-bold">{t(continent.continentKey)}</span>
-                                            <ul className="flex flex-wrap font-bold text-4xl">
-                                                {continent.countries.map((country) => {
-                                                    return (
-                                                        <li key={country.translationKey}>
-                                                            <Link
-                                                                href={`/adventures/${continent.continentKey.toLowerCase()}/${country.linkTo}`}
-                                                                className="block px-4 py-2 dark:hover:text-(--green) hover:bg-(--green) dark:hover:bg-transparent"
-                                                            >
-                                                                {t(country.translationKey)}
-                                                            </Link>
-                                                        </li>
-                                                    )
-                                                })}
-                                            </ul>
-                                        </div>
-                                    })}
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </div>
+                        </button>
+                    </li >
+                </div >
                 <li><ThemeSwitcher /></li>
-            </ul>
+            </ul >
+            <div className={`hidden md:flex top-24 left-0 z-10 absolute w-full justify-center h-[calc(100vh-6rem)] transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}
+                            `}>
+                <div className="w-full h-full relative bg-(--background) pt-6 ">
+                    <div className="absolute inset-0 z-10 bg-[url('/world-map-money-border.jpg')] bg-cover bg-center opacity-30 dark:opacity-90" />
+                    <div className="absolute max-w-5xl w-[95%] z-20 flex gap-6 flex-col left-1/2 -translate-x-1/2">
+                        {navbarAdventures.map((continent) => {
+                            return <div key={continent.params}>
+                                <span className="uppercase text-2xl font-bold">{t(continent.translationKey)}</span>
+                                <ul className="flex flex-wrap font-bold text-4xl">
+                                    {continent.countries.map((country) => {
+                                        return (
+                                            <li key={country.params}>
+                                                <Link
+                                                    href={`/adventures/${continent.params.toLowerCase()}/${country.params}`}
+                                                    className="block px-4 py-2 dark:hover:text-(--green) hover:bg-(--green) dark:hover:bg-transparent"
+                                                    onClick={closeMenu}
+                                                >
+                                                    {t(country.translationKey)}
+                                                </Link>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                            </div>
+                        })}
+                    </div >
+                </div >
+            </div >
         </nav >
     )
 }

@@ -1,17 +1,15 @@
-import ImageTraveler from "@/public/traveler.jpg"
-
 export default function About() {
     return (
         <main>
             <section className="container max-w-4xl px-4 py-8 mx-auto">
                 <h1 className="mb-6 text-4xl font-bold text-center">
-                    About Me – The Traveler
+                    About Me - The Traveler
                 </h1>
 
                 <div className="grid items-center gap-8 mb-12 md:grid-cols-2">
                     <div className="relative h-[300px] w-full">
                         <img
-                            src={ImageTraveler.src}
+                            src="/traveler.jpg"
                             alt="Traveler - man looking at the lake"
                             width="350"
                         />

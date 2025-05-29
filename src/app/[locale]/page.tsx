@@ -17,7 +17,7 @@ export default function Home() {
 
     return (
         <main>
-            <video src="video-bg.mp4" autoPlay loop muted className="h-[calc(100vh-6rem)] w-full object-cover z-0" />
+            <video src="/video-bg.mp4" autoPlay loop muted className="h-[calc(100vh-6rem)] w-full object-cover z-0" />
             { /* overlay making the video a bit darker */}
             <div className="bg-black absolute opacity-20 w-full h-[calc(100vh-6rem)] top-[6rem] left-0 z-10"></div>
 

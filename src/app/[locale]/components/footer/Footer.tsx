@@ -1,14 +1,20 @@
 "use client"
 
-import useWindowWidth from "@/src/app/[locale]/custom-hooks/useWindowWidth";
 import Link from "next/link"
 import { useTheme } from 'next-themes'
 import { useTranslations } from 'next-intl'
+import { useEffect, useState } from "react"
 
 export default function Footer() {
-    const width = useWindowWidth();
     const { resolvedTheme } = useTheme()
     const t = useTranslations('Footer')
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) return null;
 
     return (
         <footer>
@@ -23,8 +29,7 @@ export default function Footer() {
                             <span className="font-comforter text-4xl md:text-5xl">{t('Home')}</span>
                             <div className="flex flex-col md:flex-row justify-between gap-4 md:gap-0">
                                 <div className="flex flex-col text-xl">
-                                    <Link href="/about-me">{t('AboutMe')}</Link>
-                                    <Link href="#">{t('Adventures')}</Link>
+                                    <Link href="/about">{t('AboutMe')}</Link>
                                     <Link href="/contact">{t('Contact')}</Link>
                                 </div>
                                 <div className="flex flex-col items-start md:items-center gap-2">

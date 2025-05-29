@@ -1,4 +1,9 @@
 {
+    "NotFound": {
+        "Title": "404 - Page Not Found",
+        "Prompt": "Check the URL or return to the ",
+        "HomePage": "homepage"
+    },
     "Navbar": {
         "AboutMe": "About me",
         "Contact": "Contact",
