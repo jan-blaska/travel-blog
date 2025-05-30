@@ -1,0 +1,34 @@
+{
+    "About": {
+        "Header": {
+            "Title": "O mně",
+            "Subtitle": "Cestovatel, fotograf a dobrodruh"
+        },
+        "WhyITravel": {
+            "Title": "Proč Cestuji",
+            "Content": "Svět je úžasné místo s tolika věcmi, které stojí za to poznat. V podstatě miluju jen tak vyrazit někam, kde to neznám, a nechat se ohromit krásnou přírodou, pohostinností místních lidí nebo třeba jen tím, jak je všechno trochu jiné než u nás doma. Objevování nových míst je jeden z nejlepších zážitků v mém životě."
+        },
+        "Features": [
+            {
+                "Title": "Nové zážitky",
+                "Text": "Necestuji proto, abych utekl od každodenního života, ale abych se spojil s lidmi, místy a kulturami, které mi ukazují nový pohled na svět."
+            },
+            {
+                "Title": "Pomalé tempo",
+                "Text": "Věřím, že není kam spěchat – ať už ochutnávám pouliční jídlo ve Vietnamu, nebo jen sleduji západ slunce na Kanárech."
+            },
+            {
+                "Title": "Pořád se učím",
+                "Text": "Každá cesta mě něco naučí. Ať už jsou to nové jazyky nebo životní přístup - všechno díky cestování."
+            }
+        ],
+        "HowItStarted": {
+            "Title": "Jak jsem začal cestovat",
+            "Content": [
+                "Byl rok 2014, poslední ročník bakaláře, a já se rozhodl přihlásit do studentského výměnného programu Erasmus. Neměl jsem žádné konkrétní preference na město nebo zemi, jen jsem cítil, že by mi seděla nějaká jižní země. Váhal jsem mezi Španělskem, Portugalskem a Tureckem, ale pro první dvě země bylo potřeba umět jejich jazyk. A tak jsem se začal připravovat na Turecko, konkrétně na město Istanbul 🕌.",
+                "Začátky byly pro mě opravdu náročné, protože jsem sotva mluvil anglicky. Učil jsem se sice odmala, ale nikdo mě nikdy pořádně nenaučil mluvit. Naštěstí jsem byl mezi studenty z celé Evropy a brzy jsem se s nimi začal domlouvat. Bylo úžasné sledovat, jak si můj mozek začal zvykat na cizí jazyk.",
+                "Měl jsem štěstí na lidi, kteří milovali cestování v jakékoliv podobě. Někteří stopovali, jiní se s nadšením vydávali na road tripy a další si zase jen užívali atmosféru Istanbulu."
+            ]
+        }
+    }
+}

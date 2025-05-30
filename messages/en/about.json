@@ -1,0 +1,34 @@
+{
+    "About": {
+        "Header": {
+            "Title": "About Me",
+            "Subtitle": "Traveler, Photographer, and Adventurer"
+        },
+        "WhyITravel": {
+            "Title": "Why I Travel",
+            "Content": "The world is a wonderful place with so much to offer. I basically love to just go somewhere unknown and be amazed with beautiful nature, hospitality of local people or just how everything is slighly different from the things I know in my country. Exploring new places is one of the best experiences in my life."
+        },
+        "Features": [
+            {
+                "Title": "Authentic Connections",
+                "Text": "I travel not to escape life, but to connect — with people, places, and cultures that challenge my perspective."
+            },
+            {
+                "Title": "Slow Living",
+                "Text": "I believe in taking time — whether it’s enjoying street food in Vietnam or watching the sunset in the Canaries."
+            },
+            {
+                "Title": "Always Learning",
+                "Text": "Each journey is a lesson. I’ve learned languages, instruments, and life philosophies — all on the road."
+            }
+        ],
+        "HowItStarted": {
+            "Title": "How I started traveling",
+            "Content": [
+                "It was year 2014, I was in my last year of bachelor degree university and I decided to apply for student exchange program called Erasmus. I had literaly no opinion on any city or country but I felt that some southern country would be the best fit. I was hesitating between Spain, Portugal and Turkey but for the first two mentioned, they wanted me to speak Spanish or Portuguese. So it was that, I was preparing for Turkey, specifically city Istanbul 🕌.",
+                "It was great challenge for me at the beginning because I could barely speak English. Of course, I was learning English since I was a kid but no one actually teached me how to speak. Fortunately I was amongst other students from all the countries of Europe and soon after I was able to communicate with them. I could really experience how my brain become used to another language.",
+                "I was lucky to meet students who had great experiences with traveling of any kind. There were people who loved hitchhiking, others loved to jump for the road trips or some people just liked to hangout in the city of Istanbul."
+            ]
+        }
+    }
+}

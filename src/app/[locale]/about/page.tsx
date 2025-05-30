@@ -1,81 +1,71 @@
-export default function About() {
-    return (
-        <main>
-            <section className="container max-w-4xl px-4 py-8 mx-auto">
-                <h1 className="mb-6 text-4xl font-bold text-center">
-                    About Me - The Traveler
-                </h1>
+import { useTranslations } from 'next-intl'
 
-                <div className="grid items-center gap-8 mb-12 md:grid-cols-2">
-                    <div className="relative h-[300px] w-full">
-                        <img
-                            src="/traveler.jpg"
-                            alt="Traveler - man looking at the lake"
-                            width="350"
-                        />
+export default function About() {
+    const t = useTranslations('About');
+    const features = t.raw('Features') as { Title: string; Text: string }[];
+    const howItStarted = t.raw('HowItStarted') as { Title: string; Content: string[] };
+
+    console.log("How it started:", howItStarted);
+
+    return (
+        <main className='overflow-hidden'>
+            <div className="relative bg-[url('/about-me/me-sitting-on-handrail.jpg')] bg-cover bg-[50%_10%] w-full h-[calc(100vh-6rem)]">
+                <div className="absolute flex flex-col bottom-[20%] left-1/6 md:left-1/4  z-20 gap-2 md:gap-2 font-semibold ">
+                    <span className='text-(--orange) text-4xl md:text-5xl'>{t('Header.Title')}</span>
+                    <span className='text-white text-2xl md:text-6xl'>{t('Header.Subtitle')}</span>
+                </div>
+            </div>
+
+            <section className="container w-[95%] max-w-5xl mx-auto pt-8 md:pt-24 pb-8 md:pb-24" aria-labelledby="why-do-I-travel">
+                <div className="flex flex-col md:flex-row gap-4 md:gap-16">
+                    <div className="flex flex-col w-full md:w-1/2 gap-4">
+                        <span className="text-2xl font-semibold">{t('WhyITravel.Title')}</span>
+                        <span>{t('WhyITravel.Content')}</span>
                     </div>
-                    <div>
-                        <p className="mb-4 text-sm text-gray-600 uppercase" aria-hidden="true">
-                            My Journey
-                        </p>
-                        <h2 className="mb-4 text-2xl font-semibold">
-                            Exploring the world, one step at a time
-                        </h2>
-                        <p className="mb-4 text-gray-700">
-                            Hi, I am Honza — a traveler, adventurer, and lover of the unknown. I left my comfortable but routine life behind to explore cultures, connect with people, and live a life full of stories worth telling.
-                        </p>
-                        <p className="text-gray-700">
-                            Whether it is hiking volcanoes in Indonesia, drinking coffee in Lisbon, or learning bachata in Colombia, I believe every place teaches you something new — not just about the world, but about yourself.
-                        </p>
+                    <div className='relative w-full md:w-1/2'>
+                        <img
+                            src="/about-me/me-jumping-in-desert.png"
+                            alt="me jumping in the desert"
+                            className='w-full rounded shadow-md'
+                        />
+                        <div className='hidden md:block absolute w-[calc(100%+5rem)] h-[calc(100%+5rem)] -top-10 left-15 -z-10 bg-(--green) dark:opacity-70' />
                     </div>
                 </div>
             </section>
 
-            <hr className="border-gray-200" aria-hidden="true" />
+            <hr className="border-gray-200 dark:border-gray-700" aria-hidden="true" />
 
             <section className="py-12" aria-labelledby="key-features">
                 <div className="px-6 mx-auto max-w-7xl">
-                    <h2 id="key-features" className="sr-only">Core Beliefs</h2>
                     <div className="grid gap-6 md:gap-0 md:grid-cols-3">
-                        <article className="p-6 bg-white">
-                            <h3 className="mb-3 text-xl font-semibold">
-                                Authentic Connections
-                            </h3>
-                            <p className="text-gray-600">
-                                I travel not to escape life, but to connect — with people, places, and cultures that challenge my perspective.
-                            </p>
-                        </article>
-                        <article className="p-6 bg-white border-gray-400 md:border-x">
-                            <h3 className="mb-3 text-xl font-semibold">
-                                Slow Living
-                            </h3>
-                            <p className="text-gray-600">
-                                I believe in taking time — whether it’s enjoying street food in Vietnam or watching the sunset in the Canaries.
-                            </p>
-                        </article>
-                        <article className="p-6 bg-white">
-                            <h3 className="mb-3 text-xl font-semibold">
-                                Always Learning
-                            </h3>
-                            <p className="text-gray-600">
-                                Each journey is a lesson. I’ve learned languages, instruments, and life philosophies — all on the road.
-                            </p>
-                        </article>
+                        {features.map((feature, index) => (
+                            <article
+                                key={index}
+                                className={`p-6 ${index === 1 ? 'border-gray-400 dark:border-gray-500 md:border-x' : ''}`}
+                            >
+                                <h3 className="mb-3 text-xl font-semibold">{feature.Title}</h3>
+                                <p>{feature.Text}</p>
+                            </article>
+                        ))}
                     </div>
                 </div>
             </section>
 
-            <hr className="border-gray-200" aria-hidden="true" />
+            <hr className="border-gray-200 dark:border-gray-700" aria-hidden="true" />
 
-            <section className="container max-w-3xl px-4 py-8 mx-auto">
-                <div className="prose max-w-none">
-                    <h2 className="mb-4 text-2xl font-semibold">Why I Travel</h2>
-                    <p className="mb-4 text-gray-700">
-                        Traveling is my way of reconnecting with what really matters — simplicity, freedom, and curiosity. I don’t have all the answers, and that’s kind of the point. Every day is a chance to explore, reflect, and grow.
-                    </p>
-                    <p className="text-gray-700">
-                        I hope to inspire others to break free from their comfort zones and follow their own path — whether it’s around the world or simply within themselves.
-                    </p>
+            <section className="container w-[95%] max-w-5xl mx-auto pt-8 md:pt-24 pb-8 md:pb-24" aria-labelledby="how-I-started-to-travel">
+                <div className="flex flex-col md:flex-row-reverse gap-4 md:gap-16">
+                    <div className="flex flex-col w-full md:w-1/2 gap-4">
+                        <span className="text-2xl font-semibold">{howItStarted.Title}</span>
+                        <div className='flex flex-col gap-6'>
+                            {howItStarted.Content.map((item, index) => (<span key={index}>{item}</span>))}
+                        </div>
+                    </div>
+                    <img
+                        src="/about-me/me-caminito-del-rey.jpg"
+                        alt="me jumping in the desert"
+                        className='w-full md:w-1/2 rounded shadow-md h-auto max-h-[600px] object-cover'
+                    />
                 </div>
             </section>
         </main>

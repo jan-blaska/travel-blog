@@ -6,6 +6,7 @@ import navbarAdventures from "./navbarAdventures"
 import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import LocaleSwitcher from "../localeSwitcher"
+import { IoClose } from "react-icons/io5"
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -46,23 +47,23 @@ const Navbar = () => {
             >
                 <div className="w-full h-full relative bg-(--background)">
                     <ul className="absolute flex flex-col text-lg w-full z-20 pt-4">
-                        <li className="p-2 text-blue-600 dark:text-(--green) uppercase font-bold"><Link href="/about" onClick={closeMenu} >
+                        <li className="p-2 text-xl uppercase underline font-extrabold"><Link href="/about" onClick={closeMenu} >
                             {t('AboutMe')}
                         </Link></li>
                         <div className="p-2">
-                            <span className="uppercase font-bold">
+                            <span className="uppercase text-xl font-extrabold">
                                 {t('Adventures')}
                             </span>
                             {navbarAdventures.map((continent) => {
                                 return <div key={continent.params} className="pl-4 py-2">
-                                    <span>{t(continent.translationKey)}</span>
+                                    <span className="font-extrabold">{t(continent.translationKey)}</span>
                                     <ul className="flex flex-wrap pl-4 gap-x-2">
                                         {continent.countries.map((country) => {
                                             return (
                                                 <li key={country.params}>
                                                     <Link
                                                         href={`/adventures/${continent.translationKey.toLowerCase()}/${country.params}`}
-                                                        className="block text-blue-600 dark:text-(--green) p-1"
+                                                        className="block underline text-xl p-1 font-extrabold"
                                                     >
                                                         {t(country.translationKey)}
                                                     </Link>
@@ -74,11 +75,11 @@ const Navbar = () => {
                             })}
                         </div>
 
-                        <li className="p-2 text-blue-600 dark:text-(--green) uppercase font-bold"><Link href="/contact" onClick={closeMenu}>
+                        <li className="p-2 text-xl uppercase underline font-extrabold"><Link href="/contact" onClick={closeMenu}>
                             {t('Contact')}
                         </Link></li>
                     </ul>
-                    <div className="absolute inset-0 z-10 bg-[url('/world-map-mobile.jpg')] bg-cover bg-center opacity-30 dark:opacity-60" />
+                    <div className="absolute inset-0 z-10 bg-[url('/world-map-mobile.jpg')] bg-cover bg-center opacity-50 dark:opacity-60" />
 
                 </div>
 
@@ -122,7 +123,8 @@ const Navbar = () => {
             <div className={`hidden md:flex top-24 left-0 z-10 absolute w-full justify-center h-[calc(100vh-6rem)] transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}
                             `}>
                 <div className="w-full h-full relative bg-(--background) pt-6 ">
-                    <div className="absolute inset-0 z-10 bg-[url('/world-map-money-border.jpg')] bg-cover bg-center opacity-30 dark:opacity-90" />
+                    <div className="absolute inset-0 z-10 bg-[url('/world-map-money-border.jpg')] bg-cover bg-center opacity-50 dark:opacity-90" />
+                    <button onClick={closeMenu} className="h-6 w-6 cursor-pointer absolute z-25 right-6"><IoClose className="scale-200 w-full" /></button>
                     <div className="absolute max-w-5xl w-[95%] z-20 flex gap-6 flex-col left-1/2 -translate-x-1/2">
                         {navbarAdventures.map((continent) => {
                             return <div key={continent.params}>

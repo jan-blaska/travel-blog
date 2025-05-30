@@ -1,4 +1,7 @@
-import { notFound } from "next/navigation";
+import path from "path";
+import { compileMDX } from "next-mdx-remote/rsc";
+import ImageNextToText from "@/components/ImageNextToText";
+import { promises as fs } from "fs";
 
 type ArticlePageParams = {
   locale: string;
@@ -12,20 +15,24 @@ export default async function ArticlePage({ params }: {
 }) {
   const { locale, continent, country, slug } = await params;
 
-  let Article;
+  const content = await fs.readFile(path.join(process.cwd(), 'src/content', locale, continent, country, `${slug}.mdx`), 'utf-8');
+  const data = await compileMDX<{ title: string }>({
+    source: content,
+    options: {
+      parseFrontmatter: true,
+    },
+    components: {
+      ImageNextToText,
+    }
+  });
 
-  try {
-    Article = (await import(
-      `content/${locale}/${continent}/${country}/${slug}.mdx`
-    )).default;
-  } catch {
-    return notFound();
-  }
+  console.log("content", content);
 
   return (
     <div className="flex justify-center">
       <div className="w-[95%] max-w-5xl">
-        <Article />
+        {data.frontmatter.title}
+        {data.content}
       </div>
     </div>
   );
