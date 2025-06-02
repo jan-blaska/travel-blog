@@ -4,9 +4,77 @@ date: "01.10.2014"
 ---
 
 import ImageNextToText from "@/components/ImageNextToText";
-
-This is my short diary about Istanbul!
+import ImageNextToImage from "@/components/ImageNextToImage";
+import ImageSlider from "@/components/ImageSlider";
+import ImageCarousel from "@/components/ImageCarousel";
+import MainHeader from "@/components/MainHeader";
 
 <ImageNextToText imageSrc="/countries/turkey/mosque-istanbul.jpg" imageAlt="Hagia Sofia mosque">
-  Istanbul is magical place where the east meets the west.
+  <span className="text-xl md:text-2xl">
+    Istanbul is magical place where the east meets the west.
+  </span>
 </ImageNextToText>
+
+<br />
+<br />
+<br />
+
+<MainHeader>Erasmus study exchange</MainHeader>
+
+<br />
+<br />
+
+<ImageNextToText imageSrc="/countries/turkey/istanbul/basilica-cistern.png" imageAlt="Basilica Cistern" reverse={true}>
+  <span className="text-lg md:text-xl text-(--green) font-bold">
+    First steps in a foreign country 👣
+  </span>
+  <br />
+  My flight with Turkish airlines from Vienna to Istanbul was very pleasant. For me, as a student of technical university (who was used to eat either pasta or bread), the lunch served on the board was just great. I got main menu with dessert. After the arrival, student from istanbul university with name Serhat was waiting me in front of the airport. He was a volunteer and his role was to help foreign students with first steps in Turkey. He took me to the city center and because I did not have any dormitory, he assisted me with finding the accomodation. It was tough, I was not used to speak English and suddenly I had no other choice. My luggage was heavy, I felt really exhausted 🥴.
+  <br />
+  My buddy took me to one apartment, where was also my new classmate Francesco from Italy and bunch of other guys from Italy and Spain. The place looked ok, so I decided to stay there 🤌.
+  <br />
+  To live with one of my classmates was beneficial, because we could manage things about the school together. Sharing the flat with people from the different countries was the perfect starting point to start communicating in English. I remember the beginning was very tough, I was only listening but it took me just 3 weeks to be able to speak 😁.
+</ImageNextToText>
+
+<ImageCarousel imageList={[
+  "/countries/turkey/mosque-istanbul.jpg",
+  "/countries/switzerland/ship.jpg",
+  "/countries/turkey/istanbul/antient-site.png",
+  "/countries/turkey/istanbul/antient-temple.png",
+  "/countries/turkey/istanbul/lake-autumn.png",
+]} />
+
+<br />
+
+<span className="text-lg md:text-xl text-(--green) font-bold">
+    Erasmus Community
+</span>
+
+<br />
+
+<p>Surrounded by the students from all around the Europe and volunteers from local ESN group, I quickly started getting to know Istanbul city and its surroundings. I tasted the local food, got used to drinking the turkish tea and smoke cigaretes. Everything what was happening was unique and usually for the first time in my life. I traveled by the ferry. I attended the boat party. I tried hitchhiking. Most impressive about Istanbul was its beautiful historical centre, collosal mosques and bosphorus with all the ferries and ships, fishermen and smell of tasty food.</p>
+
+<br />
+
+<ImageSlider imageList={[
+  "/countries/turkey/mosque-istanbul.jpg",
+  "/countries/turkey/istanbul/table-with-cups-of-tea.png",
+]} />
+
+<br />
+<br />
+<br />
+<br />
+
+<ImageNextToText imageSrc="/countries/turkey/istanbul/lying-on-the-snow.png" imageAlt="Person lying on the snow">
+  <span className="text-lg md:text-xl text-(--green) font-bold">
+    Trips 🚌
+  </span>
+  <br />
+  Once I got used to life in Istanbul, I had desires to see places far from the city. Time to time I joined bunch of students from different contries and went to beautiful places. One of them was called Pammukale, it was wanderful place made of white minerals with pools. On the top of the place, there was another pool, with hot springs, where we could relax. Turkey is full of ancient historical places with many ruins. History is just everywhere.
+  <br />
+  Another time, I joined group of experienced travelers and went explore eastern part of Turkey. We rented a car and started road trip adventure. I learned so much from them. The way how they managed travel plans, how they behaved in different situations, I grew as a traveler so fast!
+</ImageNextToText>
+
+
+<br />

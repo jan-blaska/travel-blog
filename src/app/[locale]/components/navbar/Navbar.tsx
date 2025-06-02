@@ -45,8 +45,8 @@ const Navbar = () => {
                 className={`flex md:hidden top-24 left-0 w-full h-full fixed z-10 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'
                     }`}
             >
-                <div className="w-full h-full relative bg-(--background)">
-                    <ul className="absolute flex flex-col text-lg w-full z-20 pt-4">
+                <div className="w-full h-full relative bg-(--background) overflow-y-auto">
+                    <ul className="relative flex flex-col text-lg w-full z-20 pt-4">
                         <li className="p-2 text-xl uppercase underline font-extrabold"><Link href="/about" onClick={closeMenu} >
                             {t('AboutMe')}
                         </Link></li>
@@ -62,8 +62,9 @@ const Navbar = () => {
                                             return (
                                                 <li key={country.params}>
                                                     <Link
-                                                        href={`/adventures/${continent.translationKey.toLowerCase()}/${country.params}`}
+                                                        href={`/adventures/${continent.params.toLowerCase()}/${country.params}`}
                                                         className="block underline text-xl p-1 font-extrabold"
+                                                        onClick={closeMenu}
                                                     >
                                                         {t(country.translationKey)}
                                                     </Link>
@@ -78,8 +79,10 @@ const Navbar = () => {
                         <li className="p-2 text-xl uppercase underline font-extrabold"><Link href="/contact" onClick={closeMenu}>
                             {t('Contact')}
                         </Link></li>
+
+                        <div className="absolute inset-0 -z-10 bg-[url('/world-map-mobile.jpg')] bg-cover bg-center opacity-50 dark:opacity-60" />
                     </ul>
-                    <div className="absolute inset-0 z-10 bg-[url('/world-map-mobile.jpg')] bg-cover bg-center opacity-50 dark:opacity-60" />
+
 
                 </div>
 
@@ -122,12 +125,11 @@ const Navbar = () => {
             </ul >
             <div className={`hidden md:flex top-24 left-0 z-10 absolute w-full justify-center h-[calc(100vh-6rem)] transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}
                             `}>
-                <div className="w-full h-full relative bg-(--background) pt-6 ">
-                    <div className="absolute inset-0 z-10 bg-[url('/world-map-money-border.jpg')] bg-cover bg-center opacity-50 dark:opacity-90" />
-                    <button onClick={closeMenu} className="h-6 w-6 cursor-pointer absolute z-25 right-6"><IoClose className="scale-200 w-full" /></button>
-                    <div className="absolute max-w-5xl w-[95%] z-20 flex gap-6 flex-col left-1/2 -translate-x-1/2">
+                <div className="relative w-full h-full bg-(--background) overflow-y-auto">
+                    <button onClick={closeMenu} aria-label="close menu" className="h-6 w-6 cursor-pointer top-6 absolute z-25 right-6"><IoClose className="scale-200 w-full" /></button>
+                    <div className="relative w-full z-20 flex gap-6 flex-col py-6">
                         {navbarAdventures.map((continent) => {
-                            return <div key={continent.params}>
+                            return <div key={continent.params} className="max-w-5xl w-[95%] mx-auto">
                                 <span className="uppercase text-2xl font-bold">{t(continent.translationKey)}</span>
                                 <ul className="flex flex-wrap font-bold text-4xl">
                                     {continent.countries.map((country) => {
@@ -146,6 +148,7 @@ const Navbar = () => {
                                 </ul>
                             </div>
                         })}
+                        <div className="absolute top-0 h-full left-0 w-full -z-10 bg-[url('/world-map-money-border.jpg')] bg-cover bg-center opacity-50 dark:opacity-90" />
                     </div >
                 </div >
             </div >

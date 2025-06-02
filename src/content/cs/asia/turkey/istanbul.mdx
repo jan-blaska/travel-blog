@@ -4,11 +4,74 @@ date: "01.10.2014"
 ---
 
 import ImageNextToText from "@/components/ImageNextToText";
+import ImageNextToImage from "@/components/ImageNextToImage";
+import ImageSlider from "@/components/ImageSlider";
+import ImageCarousel from "@/components/ImageCarousel";
+import MainHeader from "@/components/MainHeader";
 
-Tohle je můj krátký příspěvek o Istanbulu!
+<ImageNextToText imageSrc="/countries/turkey/mosque-istanbul.jpg" imageAlt="Mešita Hagia Sofia">
+  <span className="text-xl md:text-2xl">
+    Istanbul je kouzelné místo, kde se Západ potkává s Východem.
+  </span>
+</ImageNextToText>
+
+<br />
+<br />
+<br />
+
+<MainHeader>Studijní pobyt Erasmus</MainHeader>
+
+<br />
+<br />
+
+<ImageNextToText imageSrc="/countries/turkey/istanbul/basilica-cistern.png" imageAlt="Cisterna Basilika" reverse={true}>
+  <span className="text-lg md:text-xl text-(--green) font-bold">
+    První kroky v cizí zemi 👣
+  </span>
+  <br />
+  Let s Turkish Airlines z Vídně do Istanbulu byl velmi příjemný. Pro mě, studenta technické univerzity (zvyklého na těstoviny nebo chleba), bylo palubní jídlo naprosto skvělé. Dostal jsem hlavní chod i dezert. Po příletu mě před letištěm čekal student z Istanbulské univerzity jménem Serhat. Byl dobrovolník a jeho úkolem bylo pomáhat zahraničním studentům s prvními kroky v Turecku. Odvezl mě do centra města a protože jsem neměl koleje, pomohl mi najít ubytování. Bylo to náročné, nebyl jsem zvyklý mluvit anglicky a najednou jsem neměl jinou možnost. Zavazadla byla těžká a cítil jsem se opravdu vyčerpaný 🥴.
+  <br />
+  Serhat mě vzal do jednoho bytu, kde už bydlel můj nový spolužák Francesco z Itálie a parta dalších Italů a Španělů. Místo vypadalo v pohodě, tak jsem se rozhodl tam zůstat 🤌.
+  <br />
+  Bydlet se spolužákem bylo výhodné, protože jsme mohli společně řešit věci kolem školy. Sdílení bytu s lidmi z různých zemí byl ideální začátek pro zlepšení angličtiny. Začátky byly těžké, jen jsem poslouchal, ale už za tři týdny jsem dokázal mluvit 😁.
+</ImageNextToText>
+
+<ImageCarousel imageList={[
+  "/countries/turkey/mosque-istanbul.jpg",
+  "/countries/switzerland/ship.jpg",
+  "/countries/turkey/istanbul/antient-site.png",
+  "/countries/turkey/istanbul/antient-temple.png",
+  "/countries/turkey/istanbul/lake-autumn.png",
+]} />
 
 <br />
 
-<ImageNextToText imageSrc="/countries/turkey/mosque-istanbul.jpg" imageAlt="Hagia Sofia mosque">
-  Istanbul je kouzelné místo kde se západ potkává s východem.
+<span className="text-lg md:text-xl text-(--green) font-bold">
+    Erasmus komunita
+</span>
+
+<br />
+
+<p>Obklopen studenty z celé Evropy a dobrovolníky z místní skupiny ESN jsem rychle začal poznávat Istanbul a jeho okolí. Ochutnal jsem místní jídlo, zvykl si na turecký čaj a kouření cigaret. Všechno, co se dělo, bylo jedinečné a většinou poprvé v životě. Cestoval jsem trajektem. Byl jsem na lodní party. Zkusil jsem stopování. Nejvíce mě na Istanbulu okouzlilo jeho nádherné historické centrum, monumentální mešity a Bosporský průliv plný lodí, rybářů a vůní jídla.</p>
+
+<br />
+
+<ImageSlider imageList={[
+  "/countries/turkey/mosque-istanbul.jpg",
+  "/countries/turkey/istanbul/table-with-cups-of-tea.png",
+]} />
+
+<br />
+<br />
+<br />
+<br />
+
+<ImageNextToText imageSrc="/countries/turkey/istanbul/lying-on-the-snow.png" imageAlt="Člověk ležící ve sněhu">
+  <span className="text-lg md:text-xl text-(--green) font-bold">
+    Výlety 🚌
+  </span>
+  <br />
+  Jakmile jsem si zvykl na život v Istanbulu, zatoužil jsem poznat i vzdálenější místa. Občas jsem se přidal k partě studentů z různých zemí a vydali jsme se na krásná místa. Jedním z nich bylo Pamukkale, úchvatné místo z bílých minerálů s jezírky. Nahoře byl bazén s horkými prameny, kde jsme mohli relaxovat. Turecko je plné historických památek a ruin – historie je prostě všude.
+  <br />
+  Jindy jsem se přidal ke skupině zkušených cestovatelů a vyrazili jsme na východ Turecka. Půjčili jsme si auto a začalo dobrodružství. Hodně jsem se od nich naučil – jak plánovat cestu, jak se chovat v různých situacích... jako cestovatel jsem vyrostl raketově!
 </ImageNextToText>

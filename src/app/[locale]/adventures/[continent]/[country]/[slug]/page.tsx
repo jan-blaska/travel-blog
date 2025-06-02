@@ -2,6 +2,10 @@ import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
 import ImageNextToText from "@/components/ImageNextToText";
 import { promises as fs } from "fs";
+import ImageSlider from "@/components/ImageSlider";
+import ImageCarousel from "@/components/ImageCarousel";
+import ImageNextToImage from "@/components/ImageNextToImage";
+import MainHeader from "@/components/MainHeader";
 
 type ArticlePageParams = {
   locale: string;
@@ -23,17 +27,22 @@ export default async function ArticlePage({ params }: {
     },
     components: {
       ImageNextToText,
+      ImageNextToImage,
+      ImageSlider,
+      ImageCarousel,
+      MainHeader,
     }
   });
 
   console.log("content", content);
 
   return (
-    <div className="flex justify-center">
-      <div className="w-[95%] max-w-5xl">
+    <div className="w-[95%] mx-auto max-w-5xl overflow-hidden">
+      <h1 className="my-4 md:my-8 relative text-7xl md:text-9xl font-barlow-condensed uppercase tracking-wider before:content-[''] before:absolute before:top-2 md:before:top-5 before:left-[-5%] before:h-[15px] before:w-[30%] before:bg-(--orange) before:-z-10 after:content-[''] after:absolute after:bottom-1 md:after:bottom-2 after:right-0 after:h-[15px] after:w-[70%] after:bg-(--green) after:-z-10">
         {data.frontmatter.title}
-        {data.content}
-      </div>
+      </h1>
+      {data.content}
     </div>
+
   );
 }

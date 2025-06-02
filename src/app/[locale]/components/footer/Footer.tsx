@@ -29,8 +29,8 @@ export default function Footer() {
                             <span className="font-comforter text-4xl md:text-5xl">{t('Home')}</span>
                             <div className="w-full flex flex-col md:flex-row justify-between gap-4 md:gap-0 items-center sm:items-start">
                                 <div className="flex flex-col text-xl">
-                                    <Link href="/about">{t('AboutMe')}</Link>
-                                    <Link href="/contact">{t('Contact')}</Link>
+                                    <Link className="hover:text-(--green)" href="/about">{t('AboutMe')}</Link>
+                                    <Link className="hover:text-(--green)" href="/contact">{t('Contact')}</Link>
                                 </div>
                                 <div className="flex flex-col items-center sm:items-start md:items-center gap-2">
                                     <span>{t('SocialMediaPrompt')}</span>
