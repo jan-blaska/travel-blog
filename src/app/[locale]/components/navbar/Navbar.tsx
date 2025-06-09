@@ -27,7 +27,7 @@ const Navbar = () => {
     }, [isOpen]);
 
     return (
-        <nav className="relative flex justify-center h-24 shadow-md dark:shadow-[0_6px_6px_rgba(255,255,255,0.1)] z-50">
+        <nav className="w-full bg-(--background) relative flex justify-center h-(--navbar-height-mobile) md:h-(--navbar-height) shadow-md dark:shadow-[0_6px_6px_rgba(255,255,255,0.1)] z-50">
 
             {/* Mobile menu */}
             <ul className="flex md:hidden w-[95%] items-center justify-between">
@@ -42,11 +42,11 @@ const Navbar = () => {
                 <li><ThemeSwitcher /></li>
             </ul>
             <div
-                className={`flex md:hidden top-24 left-0 w-full h-full fixed z-10 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'
+                className={`flex md:hidden top-(--navbar-height) left-0 w-full h-full fixed z-10 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'
                     }`}
             >
                 <div className="w-full h-full relative bg-(--background) overflow-y-auto">
-                    <ul className="relative flex flex-col text-lg w-full z-20 pt-4">
+                    <ul className="relative flex flex-col text-lg w-full z-20 pt-4 min-h-full">
                         <li className="p-2 text-xl uppercase underline font-extrabold"><Link href="/about" onClick={closeMenu} >
                             {t('AboutMe')}
                         </Link></li>
@@ -89,18 +89,25 @@ const Navbar = () => {
             </div>
 
             {/* Desktop menu */}
-            <ul className="hidden md:flex w-[95%] items-center justify-between max-w-5xl">
-                <li><Link className="font-comforter text-(--green) text-4xl" href="/">{t('Home')}</Link></li>
-                <LocaleSwitcher />
-                <div className="flex h-full">
+            <div className="hidden md:flex flex-col w-full items-center">
+
+                <div className="flex justify-between items-center w-[95%] max-w-5xl h-24">
+                    <Link className="font-comforter text-(--green) text-4xl" href="/">{t('Home')}</Link>
+                    <div className="flex gap-2 items-center">
+                        <ThemeSwitcher />
+                        <LocaleSwitcher />
+                    </div>
+                </div>
+                <ul className="grid grid-cols-4 h-16 items-center justify-around w-[95%] max-w-5xl border-y-1 border-(--foreground)">
                     {[
+                        { href: "/guides", label: t('Guides') },
                         { href: "/about", label: t('AboutMe') },
                         { href: "/contact", label: t('Contact') },
                     ].map(({ href, label }) => (
-                        <li key={href} className="h-full">
+                        <li key={href} className="h-full group">
                             <Link
                                 href={href}
-                                className="group relative h-full px-6 flex items-center justify-center uppercase"
+                                className="relative h-full flex items-center px-6 justify-center uppercase group-hover:text-(--green) transition-colors duration-300"
                             >
                                 {label}
                                 <span
@@ -113,21 +120,20 @@ const Navbar = () => {
                     >
                         <button
                             onClick={toggleMenu}
-                            className="group relative h-full cursor-pointer px-6 flex items-center justify-center uppercase">
+                            className="group relative w-full h-full group-hover:text-(--green) cursor-pointer flex items-center px-6 justify-center uppercase">
                             {t('Adventures')}
                             <span
                                 className="absolute bottom-0 left-0 h-1 w-full scale-x-0 transform bg-(--green) transition-transform duration-300 origin-center group-hover:scale-x-100"
                             ></span>
                         </button>
                     </li >
-                </div >
-                <li><ThemeSwitcher /></li>
-            </ul >
-            <div className={`hidden md:flex top-24 left-0 z-10 absolute w-full justify-center h-[calc(100vh-6rem)] transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}
+                </ul >
+            </div >
+            <div className={`hidden md:flex top-(--navbar-height) left-0 z-10 absolute w-full justify-center h-[calc(100vh-var(--navbar-height))] transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}
                             `}>
                 <div className="relative w-full h-full bg-(--background) overflow-y-auto">
                     <button onClick={closeMenu} aria-label="close menu" className="h-6 w-6 cursor-pointer top-6 absolute z-25 right-6"><IoClose className="scale-200 w-full" /></button>
-                    <div className="relative w-full z-20 flex gap-6 flex-col py-6">
+                    <div className="relative w-full z-20 flex gap-6 flex-col py-6 min-h-full">
                         {navbarAdventures.map((continent) => {
                             return <div key={continent.params} className="max-w-5xl w-[95%] mx-auto">
                                 <span className="uppercase text-2xl font-bold">{t(continent.translationKey)}</span>

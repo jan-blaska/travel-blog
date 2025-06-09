@@ -17,9 +17,9 @@ export default function Home() {
 
     return (
         <main>
-            <video src="/video-bg.mp4" autoPlay loop muted className="h-[calc(100vh-6rem)] w-full object-cover z-0" />
+            <video src="/video-bg.mp4" autoPlay loop muted className="h-[calc(100vh-var(--navbar-height-mobile))] md:h-[calc(100vh-var(--navbar-height))] w-full object-cover z-0" />
             { /* overlay making the video a bit darker */}
-            <div className="bg-black absolute opacity-20 w-full h-[calc(100vh-6rem)] top-[6rem] left-0 z-10"></div>
+            <div className="bg-black absolute opacity-20 w-full h-[calc(100vh-var(--navbar-height-mobile))] md:h-[calc(100vh-var(--navbar-height))] top-(--navbar-height-mobile) md:top-(--navbar-height) left-0 z-10"></div>
 
             { /* overlay text on the video */}
             <div className="absolute flex flex-col bottom-[20%] left-1/6 md:left-1/4 text-white z-20 gap-2 md:gap-6">

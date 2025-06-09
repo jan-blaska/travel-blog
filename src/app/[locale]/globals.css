@@ -8,6 +8,8 @@
         --green: #65A30D;
         --orange: #FFB932;
         --footer-background: #3D3A33;
+        --navbar-height: 12rem;
+        --navbar-height-mobile: 6rem;
     }
 
     .dark {
