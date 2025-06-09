@@ -4,6 +4,8 @@ import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
 import ImageNextToText from "@/components/ImageNextToText";
+import CardLink from "@/components/CardLink";
+import MainHeader from "@/components/MainHeader";
 
 type CountryPageParams = {
   locale: string;
@@ -31,27 +33,29 @@ export default async function CountryPage({ params }: {
     },
     components: {
       ImageNextToText,
+      CardLink,
+      MainHeader,
     }
   });
 
-  // load the list of articles in the country
-  const filenames = await fs.readdir(path.join(process.cwd(), 'src/content', locale, continent, country), 'utf-8');
-  const articles = await Promise.all(filenames.map(async (filename) => {
-    const content = await fs.readFile(path.join(process.cwd(), 'src/content', locale, continent, country, filename), 'utf-8');
-    const { frontmatter } = await compileMDX<{ title: string }>({
-      source: content,
-      options: {
-        parseFrontmatter: true,
-      },
-    });
-    return {
-      filename,
-      slug: filename.replace(".mdx", ""),
-      ...frontmatter,
-    }
-  }));
+  // // load the list of articles in the country
+  // const filenames = await fs.readdir(path.join(process.cwd(), 'src/content', locale, continent, country), 'utf-8');
+  // const articles = await Promise.all(filenames.map(async (filename) => {
+  //   const content = await fs.readFile(path.join(process.cwd(), 'src/content', locale, continent, country, filename), 'utf-8');
+  //   const { frontmatter } = await compileMDX<{ title: string }>({
+  //     source: content,
+  //     options: {
+  //       parseFrontmatter: true,
+  //     },
+  //   });
+  //   return {
+  //     filename,
+  //     slug: filename.replace(".mdx", ""),
+  //     ...frontmatter,
+  //   }
+  // }));
 
-  const filteredArticles = articles.filter(article => article.filename !== "index.mdx");
+  // const filteredArticles = articles.filter(article => article.filename !== "index.mdx");
 
 
   return (
@@ -60,18 +64,16 @@ export default async function CountryPage({ params }: {
         {data.frontmatter.title}
       </h1>
       {data.content}
-      <ul className="space-y-4 pt-2">
+      {/* <ul className="grid grid-cols-1 md:grid-cols-3 pt-12">
         {filteredArticles.map((article) => (
           <li key={article.slug}>
-            <Link
-              className="text-(--green)"
+            <CardLink
+              title={article.title}
               href={`/${locale}/adventures/${continent}/${country}/${article.slug}`}
-            >
-              {article.title}
-            </Link>
+            />
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 }

@@ -30,19 +30,24 @@ const Navbar = () => {
         <nav className="w-full bg-(--background) relative flex justify-center h-(--navbar-height-mobile) md:h-(--navbar-height) shadow-md dark:shadow-[0_6px_6px_rgba(255,255,255,0.1)] z-50">
 
             {/* Mobile menu */}
-            <ul className="flex md:hidden w-[95%] items-center justify-between">
-                <li>
-                    <button onClick={toggleMenu} className="flex flex-col justify-between items-center w-6 h-6 cursor-pointer">
-                        <span className={`block h-1 bg-(--foreground) transform transition duration-300 ease-in-out origin-center ${isOpen ? 'rotate-45 translate-y-[10px] w-8' : 'w-6'}`} />
-                        <span className={`block h-1 w-full bg-(--foreground) transition duration-300 ease-in-out ${isOpen ? 'opacity-0' : ''}`} />
-                        <span className={`block h-1 bg-(--foreground) transform transition duration-300 ease-in-out origin-center ${isOpen ? '-rotate-45 -translate-y-[10px] w-8' : 'w-6'}`} />
-                    </button>
-                </li>
-                <li><Link className="font-comforter text-(--green) text-3xl" href="/">{t('Home')}</Link></li>
-                <li><ThemeSwitcher /></li>
+            <ul className="flex md:hidden w-[95%] items-center justify-around flex-col">
+                <div className="flex gap-4 w-full justify-end items-center">
+                    <li><ThemeSwitcher /></li>
+                    <li><LocaleSwitcher /></li>
+                </div>
+                <div className="flex justify-between items-center w-full">
+                    <li><Link className="font-comforter text-(--green) text-3xl" href="/">{t('Home')}</Link></li>
+                    <li>
+                        <button onClick={toggleMenu} className="flex flex-col justify-between items-center w-6 h-6 cursor-pointer">
+                            <span className={`block h-1 bg-(--foreground) transform transition duration-300 ease-in-out origin-center ${isOpen ? 'rotate-45 translate-y-[10px] w-8' : 'w-6'}`} />
+                            <span className={`block h-1 w-full bg-(--foreground) transition duration-300 ease-in-out ${isOpen ? 'opacity-0' : ''}`} />
+                            <span className={`block h-1 bg-(--foreground) transform transition duration-300 ease-in-out origin-center ${isOpen ? '-rotate-45 -translate-y-[10px] w-8' : 'w-6'}`} />
+                        </button>
+                    </li>
+                </div>
             </ul>
             <div
-                className={`flex md:hidden top-(--navbar-height) left-0 w-full h-full fixed z-10 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'
+                className={`flex md:hidden top-(--navbar-height-mobile) left-0 w-full h-full fixed z-10 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'
                     }`}
             >
                 <div className="w-full h-full relative bg-(--background) overflow-y-auto">
@@ -93,12 +98,23 @@ const Navbar = () => {
 
                 <div className="flex justify-between items-center w-[95%] max-w-5xl h-24">
                     <Link className="font-comforter text-(--green) text-4xl" href="/">{t('Home')}</Link>
-                    <div className="flex gap-2 items-center">
+                    <div className="flex gap-4 items-center">
                         <ThemeSwitcher />
                         <LocaleSwitcher />
                     </div>
                 </div>
-                <ul className="grid grid-cols-4 h-16 items-center justify-around w-[95%] max-w-5xl border-y-1 border-(--foreground)">
+                <ul className="grid grid-cols-4 h-16 items-center justify-around w-[95%] max-w-5xl border-y-1 border-black/30 dark:border-white/50 rgba(255,255,255,0.1)">
+                    <li className="group h-full"
+                    >
+                        <button
+                            onClick={toggleMenu}
+                            className="group relative w-full h-full group-hover:text-(--green) cursor-pointer flex items-center px-6 justify-center uppercase">
+                            {t('Adventures')}
+                            <span
+                                className="absolute bottom-0 left-0 h-1 w-full scale-x-0 transform bg-(--green) transition-transform duration-300 origin-center group-hover:scale-x-100"
+                            ></span>
+                        </button>
+                    </li >
                     {[
                         { href: "/guides", label: t('Guides') },
                         { href: "/about", label: t('AboutMe') },
@@ -116,17 +132,6 @@ const Navbar = () => {
                             </Link>
                         </li>
                     ))}
-                    <li className="group h-full"
-                    >
-                        <button
-                            onClick={toggleMenu}
-                            className="group relative w-full h-full group-hover:text-(--green) cursor-pointer flex items-center px-6 justify-center uppercase">
-                            {t('Adventures')}
-                            <span
-                                className="absolute bottom-0 left-0 h-1 w-full scale-x-0 transform bg-(--green) transition-transform duration-300 origin-center group-hover:scale-x-100"
-                            ></span>
-                        </button>
-                    </li >
                 </ul >
             </div >
             <div className={`hidden md:flex top-(--navbar-height) left-0 z-10 absolute w-full justify-center h-[calc(100vh-var(--navbar-height))] transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}

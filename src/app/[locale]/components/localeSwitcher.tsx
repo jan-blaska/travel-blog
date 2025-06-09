@@ -3,43 +3,68 @@
 import { usePathname, useRouter } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { RiArrowDropDownLine } from 'react-icons/ri';
+import { MdCheck } from 'react-icons/md';
+import { useEffect, useRef, useState } from 'react';
 
 export default function LocaleSwitcher() {
     const router = useRouter();
     const pathname = usePathname();
     const currentLocale = useLocale();
+    const [isOpen, setIsOpen] = useState(false);
+    const dropdownRef = useRef<HTMLDivElement>(null);
 
     const changeLocale = (newLocale: string) => {
         const segments = pathname.split('/');
         segments[1] = newLocale;
         router.push(segments.join('/'));
+        setIsOpen(false);
     };
 
-    const languages: Record<string, string> = {
-        en: "English",
-        cs: "Čeština",
+    const languages: Record<string, { name: string, flag: string }> = {
+        en: { name: "English", flag: "🇬🇧" },
+        cs: { name: "Čeština", flag: "🇨🇿" },
     };
 
-    const languageToDisplay = languages[currentLocale] || 'English';
+    const languageToDisplay = languages[currentLocale]?.name || 'English';
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (
+                dropdownRef.current &&
+                !dropdownRef.current.contains(event.target as Node)
+            ) {
+                setIsOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
     return (
-        <div
-
-            className="relative flex gap-1 items-center cursor-pointer group"
-        >
-            {languageToDisplay}
-            <RiArrowDropDownLine />
-            <div className="hidden group-hover:block absolute top-full right-0 bg-(--background) shadow-lg rounded z-10 p-2">
-                {Object.entries(languages).map(([locale, name]) => (
+        <div ref={dropdownRef} className='relative'>
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="flex gap-1 items-center cursor-pointer"
+            >
+                {languageToDisplay}
+                <RiArrowDropDownLine />
+            </button>
+            {isOpen && <div className="absolute top-full right-0 bg-(--background) shadow-xl rounded z-100 p-2">
+                {Object.entries(languages).map(([locale, { name, flag }]) => (
                     <button
                         key={locale}
                         onClick={() => changeLocale(locale)}
-                        className={`block px-4 py-2 text-sm w-full text-left ${currentLocale === locale ? 'font-bold underline' : ''} hover:font-bold hover:underline`}
+                        className={`flex ${currentLocale === locale && "text-(--green)"} gap-2 items-center px-4 py-2 w-full text-left hover:text-(--green) hover:cursor-pointer`}
                     >
-                        {name}
+                        <span>{flag}</span>
+                        <span>{name}</span>
+                        {currentLocale === locale && <MdCheck />}
                     </button>
                 ))}
-            </div>
+            </div>}
         </div>
+
     );
 }
