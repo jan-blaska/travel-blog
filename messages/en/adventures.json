@@ -1,0 +1,34 @@
+{
+    "Adventures": {
+        "Header": {
+            "Title": "Adventures",
+            "Subtitle": "Experience unforgettable adventures with me"
+        },
+        "DestinationsList": {
+            "continent": {
+                "europe": "Europe",
+                "asia": "Asia",
+                "africa": "Africa",
+                "north-america": "North America"
+            },
+            "country": {
+                "albania": "Albania",
+                "finland": "Finland",
+                "france": "France",
+                "greece": "Greece",
+                "norway": "Norway",
+                "portugal": "Portugal",
+                "romania": "Romania",
+                "spain": "Spain",
+                "switzerland": "Switzerland",
+                "united-kingdom": "United Kingdom",
+                "israel": "Israel",
+                "jordan": "Jordan",
+                "philippines": "Philippines",
+                "turkey": "Turkey",
+                "morocco": "Morocco",
+                "dominican-republic": "Dominican Republic"
+            }
+        }
+    }
+}

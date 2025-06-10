@@ -8,39 +8,14 @@
         "AboutMe": "O mně",
         "Contact": "Kontakt",
         "Adventures": "Dobrodružství",
-        "Guides": "Průvodci",
-        "Home": "Jan Blaška Cestovatelský Deník",
-        "AdventuresList": {
-            "continent": {
-                "europe": "Evropa",
-                "asia": "Asie",
-                "africa": "Afrika",
-                "north-america": "Severní Amerika"
-            },
-            "country": {
-                "albania": "Albánie",
-                "finland": "Finsko",
-                "france": "Francie",
-                "greece": "Řecko",
-                "norway": "Norsko",
-                "portugal": "Portugalsko",
-                "romania": "Rumunsko",
-                "spain": "Španělsko",
-                "switzerland": "Švýcarsko",
-                "united-kingdom": "Velká Británie",
-                "israel": "Izrael",
-                "jordan": "Jordánsko",
-                "philippines": "Filipíny",
-                "turkey": "Turecko",
-                "morocco": "Maroko",
-                "dominican-republic": "Dominikánská republika"
-            }
-        }
+        "TravelTips": "Tipy na cestování",
+        "Home": "Jan Blaška Cestovatelský Deník"
     },
     "Footer": {
         "AboutMe": "O mně",
         "Contact": "Kontakt",
         "Adventures": "Dobrodružství",
+        "TravelTips": "Tipy na cestování",
         "Home": "Jan Blaška Cestovatelský Deník",
         "SocialMediaPrompt": "Propojte se se mnou na sociálních sítích!",
         "Copyright": "© 2025 Jan Blaška"

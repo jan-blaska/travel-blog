@@ -8,39 +8,14 @@
         "AboutMe": "About me",
         "Contact": "Contact",
         "Adventures": "Adventures",
-        "Guides": "Guides",
-        "Home": "Jan Blaska Travel Blog",
-        "AdventuresList": {
-            "continent": {
-                "europe": "Europe",
-                "asia": "Asia",
-                "africa": "Africa",
-                "north-america": "North America"
-            },
-            "country": {
-                "albania": "Albania",
-                "finland": "Finland",
-                "france": "France",
-                "greece": "Greece",
-                "norway": "Norway",
-                "portugal": "Portugal",
-                "romania": "Romania",
-                "spain": "Spain",
-                "switzerland": "Switzerland",
-                "united-kingdom": "United Kingdom",
-                "israel": "Israel",
-                "jordan": "Jordan",
-                "philippines": "Philippines",
-                "turkey": "Turkey",
-                "morocco": "Morocco",
-                "dominican-republic": "Dominican Republic"
-            }
-        }
+        "TravelTips": "Travel Tips",
+        "Home": "Jan Blaska Travel Blog"
     },
     "Footer": {
         "AboutMe": "About me",
         "Contact": "Contact",
         "Adventures": "Adventures",
+        "TravelTips": "Travel Tips",
         "Home": "Jan Blaska Travel Blog",
         "SocialMediaPrompt": "Connect with me on social media!",
         "Copyright": "© 2025 Jan Blaska"

@@ -9,7 +9,7 @@ export default function About() {
 
     return (
         <main className='overflow-hidden'>
-            <div className="relative bg-[url('/about-me/me-sitting-on-handrail.jpg')] bg-cover bg-[50%_10%] w-full h-[calc(100vh-6rem)]">
+            <div className="relative bg-[url('/about-me/me-sitting-on-handrail.jpg')] bg-cover bg-[50%_10%] w-full h-[calc(100vh-var(--navbar-height-mobile))] md:h-[calc(100vh-var(--navbar-height))]">
                 <div className="absolute flex flex-col bottom-[20%] left-1/6 md:left-1/4  z-20 gap-2 md:gap-2 font-semibold ">
                     <span className='text-(--orange) text-4xl md:text-5xl'>{t('Header.Title')}</span>
                     <span className='text-white text-2xl md:text-6xl'>{t('Header.Subtitle')}</span>
