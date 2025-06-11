@@ -58,7 +58,7 @@ const Navbar = () => {
                                 {t('Contact')}
                             </Link>
                         </li>
-                        <div className="absolute inset-0 -z-10 bg-[url('/world-map-mobile.jpg')] bg-cover bg-center opacity-50 dark:opacity-60" />
+                        <div className="absolute inset-0 -z-10 bg-[url('/world-map-mobile.jpg')] bg-cover bg-center opacity-70 dark:opacity-60" />
                     </ul>
                 </div>
             </div>

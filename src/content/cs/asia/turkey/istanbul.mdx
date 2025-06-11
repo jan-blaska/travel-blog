@@ -6,7 +6,7 @@ date: "01.10.2014"
 import ImageNextToText from "@/components/ImageNextToText";
 import ImageNextToImage from "@/components/ImageNextToImage";
 import ImageSlider from "@/components/ImageSlider";
-import ImageCarousel from "@/components/ImageCarousel";
+import ImageSliderWide from "@/components/ImageSliderWide";
 import MainHeader from "@/components/MainHeader";
 
 <ImageNextToText imageSrc="/countries/turkey/mosque-istanbul.jpg" imageAlt="Mešita Hagia Sofia">
@@ -15,16 +15,9 @@ import MainHeader from "@/components/MainHeader";
   </span>
 </ImageNextToText>
 
-<br />
-<br />
-<br />
+<MainHeader className="pt-16">Studijní pobyt Erasmus</MainHeader>
 
-<MainHeader>Studijní pobyt Erasmus</MainHeader>
-
-<br />
-<br />
-
-<ImageNextToText imageSrc="/countries/turkey/istanbul/basilica-cistern.png" imageAlt="Cisterna Basilika" reverse={true}>
+<ImageNextToText imageSrc="/countries/turkey/istanbul/basilica-cistern.png" imageAlt="Cisterna Basilika" reverse={true} className="pt-12">
   <span className="text-lg md:text-xl text-(--green) font-bold">
     První kroky v cizí zemi 👣
   </span>
@@ -36,35 +29,30 @@ import MainHeader from "@/components/MainHeader";
   Bydlet se spolužákem bylo výhodné, protože jsme mohli společně řešit věci kolem školy. Sdílení bytu s lidmi z různých zemí byl ideální začátek pro zlepšení angličtiny. Začátky byly těžké, jen jsem poslouchal, ale už za tři týdny jsem dokázal mluvit 😁.
 </ImageNextToText>
 
-<ImageCarousel imageList={[
-  "/countries/turkey/mosque-istanbul.jpg",
-  "/countries/switzerland/ship.jpg",
-  "/countries/turkey/istanbul/antient-site.png",
-  "/countries/turkey/istanbul/antient-temple.png",
-  "/countries/turkey/istanbul/lake-autumn.png",
-]} />
-
-<br />
+<ImageSliderWide 
+  imageList={[
+    "/countries/turkey/mosque-istanbul.jpg",
+    "/countries/switzerland/ship.jpg",
+    "/countries/turkey/istanbul/antient-site.png",
+    "/countries/turkey/istanbul/antient-temple.png",
+    "/countries/turkey/istanbul/lake-autumn.png",
+  ]}
+  className="my-12"
+/>
 
 <span className="text-lg md:text-xl text-(--green) font-bold">
     Erasmus komunita
 </span>
-
 <br />
-
 <p>Obklopen studenty z celé Evropy a dobrovolníky z místní skupiny ESN jsem rychle začal poznávat Istanbul a jeho okolí. Ochutnal jsem místní jídlo, zvykl si na turecký čaj a kouření cigaret. Všechno, co se dělo, bylo jedinečné a většinou poprvé v životě. Cestoval jsem trajektem. Byl jsem na lodní party. Zkusil jsem stopování. Nejvíce mě na Istanbulu okouzlilo jeho nádherné historické centrum, monumentální mešity a Bosporský průliv plný lodí, rybářů a vůní jídla.</p>
-
-<br />
 
 <ImageSlider imageList={[
   "/countries/turkey/mosque-istanbul.jpg",
   "/countries/turkey/istanbul/table-with-cups-of-tea.png",
-]} />
+  "/countries/turkey/istanbul/table-with-cups-of-tea.png",
+  "/countries/turkey/istanbul/table-with-cups-of-tea.png",
+]} className="mt-8 mb-16"/>
 
-<br />
-<br />
-<br />
-<br />
 
 <ImageNextToText imageSrc="/countries/turkey/istanbul/lying-on-the-snow.png" imageAlt="Člověk ležící ve sněhu">
   <span className="text-lg md:text-xl text-(--green) font-bold">

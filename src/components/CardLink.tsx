@@ -1,5 +1,6 @@
 import Link from "next/link";
-import Image from 'next/image'
+import Image from 'next/image';
+import clsx from "clsx";
 
 type Props = {
     title: string;
@@ -7,13 +8,14 @@ type Props = {
     href: string;
     image: string;
     lastUpdated?: string;
+    className?: string;
 }
 
-export default function CardLink({ title, description, href, image, lastUpdated }: Props) {
+export default function CardLink({ title, description, href, image, lastUpdated, className }: Props) {
     return (
         <Link
             href={href}
-            className="rounded-md w-full dark:bg-white/10 shadow-xl sm:hover:scale-105 sm:transition-transform sm:duration-300 sm:ease-in-out"
+            className={clsx("rounded-md w-full dark:bg-white/10 shadow-xl sm:hover:scale-105 sm:transition-transform sm:duration-300 sm:ease-in-out", className)}
         >
             <div className="flex flex-col items-center justify-start pb-4">
                 <Image width={500} height={500} src={image} alt={title} className="rounded-t-md" />
