@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm show *)",
+      "Bash(node -e \"const v=JSON.parse\\(require\\('fs'\\).readFileSync\\('/dev/stdin','utf8'\\)\\); const v16=v.filter\\(x=>x.startsWith\\('16'\\)\\); console.log\\('Latest v16:', v16[v16.length-1] || 'none'\\); const latest=v[v.length-1]; console.log\\('Latest overall:', latest\\);\")",
+      "Bash(npx @next/codemod@latest agents-md --output .next-docs)",
+      "Bash(npx @next/codemod@latest agents-md --output CLAUDE.md)",
+      "Bash(node -e \"const chunks=[]; process.stdin.on\\('data',d=>chunks.push\\(d\\)\\); process.stdin.on\\('end',\\(\\)=>{ const d=JSON.parse\\(chunks.join\\(''\\)\\); console.log\\('Version:', d.version\\); console.log\\('Peer deps:', JSON.stringify\\(d.peerDependencies,null,2\\)\\); console.log\\('Engines:', JSON.stringify\\(d.engines,null,2\\)\\); }\\);\")",
+      "Bash(npx @next/codemod@latest --help)",
+      "Bash(npx @next/codemod@latest upgrade --help)",
+      "Bash(npx @next/codemod@latest upgrade latest)",
+      "Bash(grep -r \"experimental_ppr\\\\|unstable_\\\\|experimental.*ppr\" --include=\"*.ts\" --include=\"*.tsx\" --include=\"*.js\" --include=\"*.mjs\" .)",
+      "Bash(ls middleware.ts middleware.js)",
+      "Bash(npm install *)",
+      "Bash(node -e \"console.log\\(require\\('./node_modules/next/package.json'\\).version\\)\")",
+      "Bash(npm audit *)",
+      "Bash(npm run *)",
+      "Bash(npx @next/codemod@latest middleware-to-proxy src/middleware.ts)",
+      "Bash(npx @next/codemod@latest middleware-to-proxy src/middleware.ts --force)"
+    ]
+  }
+}
