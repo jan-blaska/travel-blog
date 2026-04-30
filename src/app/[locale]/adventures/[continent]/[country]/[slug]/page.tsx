@@ -6,6 +6,7 @@ import ImageSliderWide from "@/components/ImageSliderWide";
 import ImageSlider from "@/components/ImageSlider";
 import ImageNextToImage from "@/components/ImageNextToImage";
 import MainHeader from "@/components/MainHeader";
+import { notFound } from "next/navigation";
 
 type ArticlePageParams = {
   locale: string;
@@ -19,7 +20,13 @@ export default async function ArticlePage({ params }: {
 }) {
   const { locale, continent, country, slug } = await params;
 
-  const content = await fs.readFile(path.join(process.cwd(), 'src/content', locale, continent, country, `${slug}.mdx`), 'utf-8');
+  let content: string;
+  try {
+    content = await fs.readFile(path.join(process.cwd(), 'src/content', locale, continent, country, `${slug}.mdx`), 'utf-8');
+  } catch {
+    return notFound();
+  }
+
   const data = await compileMDX<{ title: string }>({
     source: content,
     options: {

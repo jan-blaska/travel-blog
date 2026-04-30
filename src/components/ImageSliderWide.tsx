@@ -53,7 +53,6 @@ export default function ImageSliderWide({ imageList, className }: Props) {
 
             <div className="relative w-[90%] aspect-[3/2] overflow-visible flex justify-center items-center">
                 {imageList.map((src, index) => {
-                    console.log(index);
                     return (<img
                         key={index}
                         src={src}

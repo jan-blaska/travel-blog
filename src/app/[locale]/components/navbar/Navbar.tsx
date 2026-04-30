@@ -1,8 +1,8 @@
 "use client"
 
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import ThemeSwitcher from "../themeSwitcher"
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import LocaleSwitcher from "../localeSwitcher"
 import { IoClose } from "react-icons/io5"

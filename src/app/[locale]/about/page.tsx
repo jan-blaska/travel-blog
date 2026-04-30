@@ -5,8 +5,6 @@ export default function About() {
     const features = t.raw('Features') as { Title: string; Text: string }[];
     const howItStarted = t.raw('HowItStarted') as { Title: string; Content: string[] };
 
-    console.log("How it started:", howItStarted);
-
     return (
         <main className='overflow-hidden'>
             <div className="relative bg-[url('/about-me/me-sitting-on-handrail.jpg')] bg-cover bg-[50%_10%] w-full h-[calc(100vh-var(--navbar-height-mobile))] md:h-[calc(100vh-var(--navbar-height))]">
@@ -19,7 +17,7 @@ export default function About() {
             <section className="container w-[95%] max-w-5xl mx-auto pt-8 md:pt-24 pb-8 md:pb-24" aria-labelledby="why-do-I-travel">
                 <div className="flex flex-col md:flex-row gap-4 md:gap-16">
                     <div className="flex flex-col w-full md:w-1/2 gap-4">
-                        <span className="text-2xl font-semibold">{t('WhyITravel.Title')}</span>
+                        <h2 id="why-do-I-travel" className="text-2xl font-semibold">{t('WhyITravel.Title')}</h2>
                         <span>{t('WhyITravel.Content')}</span>
                     </div>
                     <div className='relative w-full md:w-1/2'>
@@ -35,7 +33,7 @@ export default function About() {
 
             <hr className="border-gray-200 dark:border-gray-700" aria-hidden="true" />
 
-            <section className="py-12" aria-labelledby="key-features">
+            <section className="py-12" aria-label="Key features">
                 <div className="px-6 mx-auto max-w-7xl">
                     <div className="grid gap-6 md:gap-0 md:grid-cols-3">
                         {features.map((feature, index) => (
@@ -56,14 +54,14 @@ export default function About() {
             <section className="container w-[95%] max-w-5xl mx-auto pt-8 md:pt-24 pb-8 md:pb-24" aria-labelledby="how-I-started-to-travel">
                 <div className="flex flex-col md:flex-row-reverse gap-4 md:gap-16">
                     <div className="flex flex-col w-full md:w-1/2 gap-4">
-                        <span className="text-2xl font-semibold">{howItStarted.Title}</span>
+                        <h2 id="how-I-started-to-travel" className="text-2xl font-semibold">{howItStarted.Title}</h2>
                         <div className='flex flex-col gap-6'>
                             {howItStarted.Content.map((item, index) => (<span key={index}>{item}</span>))}
                         </div>
                     </div>
                     <img
                         src="/about-me/me-caminito-del-rey.jpg"
-                        alt="me jumping in the desert"
+                        alt="me at Caminito del Rey"
                         className='w-full md:w-1/2 rounded shadow-md h-auto max-h-[600px] object-cover'
                     />
                 </div>

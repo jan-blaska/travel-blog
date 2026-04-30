@@ -10,9 +10,7 @@ type Props = {
 }
 
 export default function ImageSlider({ imageList, className }: Props) {
-    if (imageList.length === 0) return null;
     const [isAnimating, setIsAnimating] = useState(false);
-
     const [currentIndex, setCurrentIndex] = useState(0);
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -36,8 +34,11 @@ export default function ImageSlider({ imageList, className }: Props) {
 
         return () => {
             if (timeoutRef.current) clearTimeout(timeoutRef.current);
+            clearTimeout(animationTimeout);
         };
     }, [currentIndex, imageList.length]);
+
+    if (imageList.length === 0) return null;
 
     const goToPrevious = () => {
         setIsAnimating(true);

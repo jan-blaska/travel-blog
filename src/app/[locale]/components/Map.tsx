@@ -1,9 +1,9 @@
 "use client"
 
-import { MapContainer, GeoJSON, Marker, TileLayer, Popup } from "react-leaflet"
+import { MapContainer, GeoJSON, TileLayer } from "react-leaflet"
 import { LatLngExpression, LatLngTuple } from 'leaflet';
 import { useEffect, useState, useCallback } from "react"
-import type { GeoJsonObject } from "geojson"
+import type { GeoJsonObject, Feature } from "geojson"
 import { useTheme } from 'next-themes'
 
 import "leaflet/dist/leaflet.css"
@@ -15,8 +15,9 @@ interface MapProps {
     zoom: number,
 }
 
-const Map = (Map: MapProps) => {
-    const { zoom, posix } = Map
+const visitedCountries = ["Czechia", "Spain", "Germany", "Italy", "GBR", "Israel", "France", "MAR", "Norway", "Sweden", "Finland", "Poland", "Romania", "Portugal", "Slovakia", "Austria", "Switzerland", "Hungary", "Croatia", "Philippines", "Turkey", "Greece", "Albania", "Netherlands", "Bulgaria", "Serbia", "Montenegro", "Slovenia"];
+
+const Map = ({ zoom, posix }: MapProps) => {
     const [geoData, setGeoData] = useState<GeoJsonObject | null>(null)
     const { resolvedTheme } = useTheme()
 
@@ -24,16 +25,14 @@ const Map = (Map: MapProps) => {
         fetch("/data/world-countries.geo.json")
             .then((res) => res.json())
             .then((data) => {
-                console.log("GeoJSON loaded:", data)
                 setGeoData(data)
             })
     }, [])
 
-    const visitedCountries = ["Czechia", "Spain", "Germany", "Italy", "GBR", "Israel", "France", "MAR", "Norway", "Sweden", "Finland", "Poland", "Romania", "Portugal", "Slovakia", "Austria", "Switzerland", "Hungary", "Croatia", "Philippines", "Turkey", "Greece", "Albania", "Netherlands", "Bulgaria", "Serbia", "Montenegro", "Slovenia"];
-
-    const styleFeature = useCallback((feature: any) => {
-        const isoCode = feature.properties["ISO3166-1-Alpha-3"];
-        const name = feature.properties.name;
+    const styleFeature = useCallback((feature: Feature | undefined) => {
+        if (!feature?.properties) return { fillColor: "#e0e0e0", color: "#999", weight: 1, fillOpacity: 0.2 };
+        const isoCode = feature.properties["ISO3166-1-Alpha-3"] as string;
+        const name = feature.properties.name as string;
 
         const isVisited = visitedCountries.includes(isoCode) || visitedCountries.includes(name);
 

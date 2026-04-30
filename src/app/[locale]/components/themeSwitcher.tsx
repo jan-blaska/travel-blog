@@ -24,6 +24,8 @@ const ThemeSwitcher = () => {
     if (resolvedTheme === 'light') {
         return <FiMoon className="cursor-pointer" onClick={() => setTheme('dark')} />
     }
+
+    return null
 }
 
 export default ThemeSwitcher

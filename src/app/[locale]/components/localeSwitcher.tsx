@@ -1,6 +1,6 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter } from '@/i18n/navigation';
 import { useLocale } from 'next-intl';
 import { RiArrowDropDownLine } from 'react-icons/ri';
 import { MdCheck } from 'react-icons/md';
@@ -14,9 +14,7 @@ export default function LocaleSwitcher() {
     const dropdownRef = useRef<HTMLDivElement>(null);
 
     const changeLocale = (newLocale: string) => {
-        const segments = pathname.split('/');
-        segments[1] = newLocale;
-        router.push(segments.join('/'));
+        router.replace(pathname, { locale: newLocale });
         setIsOpen(false);
     };
 

@@ -1,19 +1,18 @@
 "use client"
 
-import { useMemo } from "react";
 import dynamic from "next/dynamic";
 import { useTranslations } from 'next-intl';
 
+const Map = dynamic(
+    () => import('./components/Map'),
+    {
+        loading: () => <p>A map is loading</p>,
+        ssr: false
+    }
+)
+
 export default function Home() {
     const t = useTranslations('HomePage');
-
-    const Map = useMemo(() => dynamic(
-        () => import('./components/Map'),
-        {
-            loading: () => <p>A map is loading</p>,
-            ssr: false
-        }
-    ), [])
 
     return (
         <main>
