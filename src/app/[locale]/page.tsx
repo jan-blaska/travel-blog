@@ -25,10 +25,13 @@ export default function Home() {
                 <span className="font-cinzel font-bold tracking-widest text-3xl md:text-5xl">
                     {t('Title.Text')}
                 </span>
-                <button className="uppercase text-xl px-10 md:px-20 py-3 md:py-6 w-min border-1 cursor-pointer bg-transparent hover:bg-white hover:text-black">{t('Title.ButtonText')}</button>
+                <button
+                    onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="uppercase text-xl px-10 md:px-20 py-3 md:py-6 w-min border-1 cursor-pointer bg-transparent hover:bg-white hover:text-black"
+                >{t('Title.ButtonText')}</button>
             </div>
 
-            <div className="flex justify-center mt-8 md:mt-16">
+            <div id="about" className="flex justify-center mt-8 md:mt-16">
                 <div className="flex flex-col max-w-5xl w-[95%]">
                     <div className="flex flex-col w-full gap-y-6 md:gap-y-8">
                         <span className="text-2xl md:text-3xl font-barlow-condensed">{t('Greeting.Hello')}<span className="font-comforter">{t('Greeting.MyNameIs')}</span><span className="text-(--green) font-bold px-2">{t('Greeting.JanBlaska')}</span></span>
