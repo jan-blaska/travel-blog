@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Albert_Sans, Montserrat_Alternates, Comforter_Brush, Barlow_Condensed } from "next/font/google"
+import { Albert_Sans, Montserrat_Alternates, Comforter_Brush, Barlow_Condensed, Cinzel } from "next/font/google"
 import { ThemeProvider } from 'next-themes'
 import type { Metadata } from 'next'
 import Navbar from "./components/navbar/Navbar";
@@ -34,8 +34,15 @@ const barlowCondensed = Barlow_Condensed({
   variable: "--font-barlow-condensed"
 })
 
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "700", "900"],
+  variable: "--font-cinzel"
+})
+
 export const metadata: Metadata = {
-  title: 'Travel Blog',
+  title: 'JAN UKU TRAVEL',
   description: 'travel diaries, travel tips',
 }
 
@@ -54,7 +61,7 @@ export default async function LocaleLayout({
 
   return (
     <html suppressHydrationWarning lang={locale}>
-      <body className={`${albertSans.className} ${montserratAlternates.variable} ${comforterBrush.variable} ${barlowCondensed.variable}`}>
+      <body className={`${albertSans.className} ${montserratAlternates.variable} ${comforterBrush.variable} ${barlowCondensed.variable} ${cinzel.variable}`}>
         <NextIntlClientProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <header>

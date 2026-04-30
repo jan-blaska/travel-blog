@@ -1,7 +1,7 @@
 {
     "HomePage": {
         "Title": {
-            "Text": "my Travel Blog",
+            "Text": "JAN UKU TRAVEL",
             "ButtonText": "Explore",
             "Name": "Jan",
             "Surname": "Blaska"
@@ -9,7 +9,7 @@
         "Greeting": {
             "Hello": "Hello! ",
             "MyNameIs": "My name is",
-            "JanBlaska": "Jan Blaska.",
+            "JanBlaska": "Jan.",
             "Welcome": "Welcome TO my travel blog!",
             "MakeATea": "Make a tea or a coffee, and ",
             "LetsExplore": "lets explore with me some adventure 📷."

@@ -1,7 +1,7 @@
 {
     "HomePage": {
         "Title": {
-            "Text": "můj cestovatelský deník",
+            "Text": "JAN UKU TRAVEL",
             "ButtonText": "Začít",
             "Name": "Jan",
             "Surname": "Blaška"
@@ -9,7 +9,7 @@
         "Greeting": {
             "Hello": "Ahoj! ",
             "MyNameIs": "Jmenuji se",
-            "JanBlaska": "Jan Blaška.",
+            "JanBlaska": "Jan.",
             "Welcome": "Vítejte na mém cestovatelském deníku!",
             "MakeATea": "Uvařte si čaj nebo kávu a ",
             "LetsExplore": "pojď se mnou za dobrodružstvím 📷."

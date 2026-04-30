@@ -36,4 +36,8 @@
     .font-barlow-condensed {
         font-family: var(--font-barlow-condensed);
     }
+
+    .font-cinzel {
+        font-family: var(--font-cinzel);
+    }
 }

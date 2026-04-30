@@ -24,7 +24,7 @@ const Navbar = () => {
                         <IoMdMenu className="scale-200 w-full" />
                     </button>
                 </li>
-                <li><Link className="font-comforter text-(--green) text-3xl" href="/">{t('Home')}</Link></li>
+                <li><Link className="font-cinzel font-bold tracking-widest text-(--green) text-xl" href="/">{t('Home')}</Link></li>
                 <div className="flex gap-2 justify-end items-center">
                     <li><ThemeSwitcher /></li>
                     <li><LocaleSwitcher /></li>
@@ -67,7 +67,7 @@ const Navbar = () => {
             <div className="hidden md:flex flex-col w-full items-center">
 
                 <div className="flex justify-between items-center w-[95%] max-w-5xl h-20">
-                    <Link className="font-comforter text-(--green) text-4xl" href="/">{t('Home')}</Link>
+                    <Link className="font-cinzel font-bold tracking-widest text-(--green) text-2xl" href="/">{t('Home')}</Link>
                     <div className="flex gap-4 items-center">
                         <ThemeSwitcher />
                         <LocaleSwitcher />

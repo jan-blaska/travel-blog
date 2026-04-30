@@ -16,7 +16,7 @@ export default function Footer() {
                 <div className="flex flex-col max-w-5xl w-[95%] justify-center">
                     <div className="flex flex-col sm:flex-row justify-between">
                         <div className="flex flex-col justify-between gap-8 sm:w-3/5 items-center sm:items-start">
-                            <span className="font-comforter text-4xl md:text-5xl">{t('Home')}</span>
+                            <span className="font-cinzel font-bold tracking-widest text-xl md:text-2xl">{t('Home')}</span>
                             <div className="w-full flex flex-col md:flex-row justify-between gap-4 md:gap-0 items-center sm:items-start">
                                 <div className="flex flex-col text-xl">
                                     <Link className="hover:text-(--green)" href="/adventures">{t('Adventures')}</Link>
