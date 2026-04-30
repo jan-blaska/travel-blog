@@ -14,87 +14,97 @@ const Navbar = () => {
     const closeMenu = () => setIsOpen(false)
     const t = useTranslations('Navbar')
 
+    const links = [
+        { href: "/travel-tips", label: t('TravelTips') },
+        { href: "/adventures", label: t('Adventures') },
+        { href: "/about", label: t('AboutMe') },
+        { href: "/contact", label: t('Contact') },
+    ]
+
     return (
-        <nav className="w-full bg-(--background) relative flex justify-center h-(--navbar-height-mobile) md:h-(--navbar-height) shadow-md dark:shadow-[0_6px_6px_rgba(255,255,255,0.1)] z-50">
+        <nav className="w-full bg-(--background) relative flex justify-center h-(--navbar-height-mobile) md:h-(--navbar-height) border-b border-(--orange)/30 z-50">
 
-            {/* Mobile menu */}
-            <ul className="flex md:hidden w-[95%] items-center flex-row justify-between">
-                <li>
-                    <button onClick={openMenu} className="flex justify-between items-center w-6 h-6 cursor-pointer">
-                        <IoMdMenu className="scale-200 w-full" />
-                    </button>
-                </li>
-                <li><Link className="font-cinzel font-bold tracking-widest text-(--green) text-xl" href="/">{t('Home')}</Link></li>
-                <div className="flex gap-2 justify-end items-center">
-                    <li><ThemeSwitcher /></li>
-                    <li><LocaleSwitcher /></li>
-                </div>
-
-            </ul>
-            <div
-                className={`flex md:hidden top-0 left-0 w-2/3 h-full fixed z-10 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'
-                    }`}
-            >
-                <div className="w-full h-full relative bg-(--background) overflow-y-auto">
-                    <ul className="relative flex flex-col justify-center items-center gap-4 text-lg w-full z-20 pt-4 min-h-full">
-                        <button onClick={closeMenu} aria-label="close menu" className="h-6 w-6 cursor-pointer top-6 absolute z-25 right-6"><IoClose className="scale-200 w-full" /></button>
-                        <li className="p-2 text-xl uppercase font-extrabold">
-                            <Link href="/travel-tips" onClick={closeMenu} >
-                                {t('TravelTips')}
-                            </Link>
-                        </li>
-                        <li className="p-2 text-xl uppercase font-extrabold">
-                            <Link href="/adventures" onClick={closeMenu} >
-                                {t('Adventures')}
-                            </Link>
-                        </li>
-                        <li className="p-2 text-xl uppercase font-extrabold">
-                            <Link href="/about" onClick={closeMenu} >
-                                {t('AboutMe')}
-                            </Link>
-                        </li>
-                        <li className="p-2 text-xl uppercase font-extrabold">
-                            <Link href="/contact" onClick={closeMenu}>
-                                {t('Contact')}
-                            </Link>
-                        </li>
-                        <div className="absolute inset-0 -z-10 bg-[url('/world-map-mobile.jpg')] bg-cover bg-center opacity-70 dark:opacity-60" />
-                    </ul>
+            {/* Mobile top bar */}
+            <div className="flex md:hidden w-[95%] items-center justify-between">
+                <button onClick={openMenu} aria-label="open menu" className="cursor-pointer p-1">
+                    <IoMdMenu className="w-6 h-6" />
+                </button>
+                <Link className="font-cinzel font-bold tracking-widest text-(--green) text-base" href="/">
+                    {t('Home')}
+                </Link>
+                <div className="flex gap-3 items-center">
+                    <ThemeSwitcher />
+                    <LocaleSwitcher />
                 </div>
             </div>
 
-            {/* Desktop menu */}
-            <div className="hidden md:flex flex-col w-full items-center">
+            {/* Mobile drawer backdrop */}
+            {isOpen && (
+                <div
+                    className="fixed inset-0 bg-black/40 z-40 md:hidden"
+                    onClick={closeMenu}
+                />
+            )}
 
-                <div className="flex justify-between items-center w-[95%] max-w-5xl h-20">
-                    <Link className="font-cinzel font-bold tracking-widest text-(--green) text-2xl" href="/">{t('Home')}</Link>
-                    <div className="flex gap-4 items-center">
-                        <ThemeSwitcher />
-                        <LocaleSwitcher />
+            {/* Mobile slide-in drawer */}
+            <div className={`fixed top-0 left-0 w-72 h-screen z-50 md:hidden transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+                <div className="w-full h-full bg-(--background) flex flex-col overflow-y-auto">
+                    <div className="flex items-center justify-between px-6 py-5 border-b border-(--orange)/20">
+                        <Link className="font-cinzel font-bold tracking-widest text-(--green) text-sm" href="/" onClick={closeMenu}>
+                            {t('Home')}
+                        </Link>
+                        <button onClick={closeMenu} aria-label="close menu" className="cursor-pointer p-1">
+                            <IoClose className="w-5 h-5" />
+                        </button>
                     </div>
+                    <ul className="flex flex-col px-6 py-4 flex-1">
+                        {links.map(({ href, label }) => (
+                            <li key={href}>
+                                <Link
+                                    href={href}
+                                    onClick={closeMenu}
+                                    className="flex items-center gap-3 py-4 border-b border-(--orange)/10 font-barlow-condensed uppercase tracking-widest text-lg hover:text-(--orange) transition-colors duration-200 last:border-0"
+                                >
+                                    <span className="w-1 h-1 rounded-full bg-(--orange) shrink-0" />
+                                    {label}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                    <div className="absolute inset-0 -z-10 bg-[url('/world-map-mobile.jpg')] bg-cover bg-center opacity-10 dark:opacity-5" />
                 </div>
-                <ul className="flex flex-row h-12 items-center justify-around w-[95%] max-w-5xl border-y-1 border-black/30 dark:border-white/50 rgba(255,255,255,0.1)">
-                    {[
-                        { href: "/travel-tips", label: t('TravelTips') },
-                        { href: "/adventures", label: t('Adventures') },
-                        { href: "/about", label: t('AboutMe') },
-                        { href: "/contact", label: t('Contact') },
-                    ].map(({ href, label }) => (
-                        <li key={href} className="h-full group">
+            </div>
+
+            {/* Desktop single row */}
+            <div className="hidden md:flex w-[95%] max-w-5xl items-center justify-between">
+
+                <Link className="font-cinzel font-bold tracking-widest text-(--green) text-xl shrink-0" href="/">
+                    {t('Home')}
+                </Link>
+
+                <ul className="flex items-center">
+                    {links.map(({ href, label }, i) => (
+                        <li key={href} className="flex items-center">
+                            {i > 0 && (
+                                <span className="mx-2 text-(--orange)/40 select-none text-xs">◆</span>
+                            )}
                             <Link
                                 href={href}
-                                className="relative h-full flex items-center px-6 justify-center uppercase group-hover:text-(--green) transition-colors duration-300"
+                                className="group relative px-3 py-1 font-barlow-condensed uppercase tracking-widest text-sm hover:text-(--orange) transition-colors duration-300"
                             >
                                 {label}
-                                <span
-                                    className="absolute bottom-0 left-0 h-1 w-full scale-x-0 transform bg-(--green) transition-transform duration-300 origin-center group-hover:scale-x-100"
-                                ></span>
+                                <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-(--orange) transition-all duration-300 group-hover:w-full" />
                             </Link>
                         </li>
                     ))}
-                </ul >
-            </div >
-        </nav >
+                </ul>
+
+                <div className="flex gap-4 items-center shrink-0">
+                    <ThemeSwitcher />
+                    <LocaleSwitcher />
+                </div>
+            </div>
+        </nav>
     )
 }
 
