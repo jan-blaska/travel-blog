@@ -1,7 +1,9 @@
-import { useTranslations } from 'next-intl'
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
-export default function About() {
-    const t = useTranslations('About');
+export default async function About({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+    const t = await getTranslations({ locale, namespace: 'About' });
     const features = t.raw('Features') as { Title: string; Text: string }[];
     const howItStarted = t.raw('HowItStarted') as { Title: string; Content: string[] };
 

@@ -16,7 +16,10 @@
       "Bash(npm audit *)",
       "Bash(npm run *)",
       "Bash(npx @next/codemod@latest middleware-to-proxy src/middleware.ts)",
-      "Bash(npx @next/codemod@latest middleware-to-proxy src/middleware.ts --force)"
+      "Bash(npx @next/codemod@latest middleware-to-proxy src/middleware.ts --force)",
+      "Bash(node -e \"const pkg = require\\('./package.json'\\); console.log\\('next-intl:', pkg.dependencies['next-intl']\\)\")",
+      "Bash(node -e \"const pkg = require\\('./node_modules/next-intl/package.json'\\); console.log\\(pkg.version\\)\")",
+      "Bash(git diff *)"
     ]
   }
 }

@@ -1,9 +1,11 @@
-import { useTranslations } from 'next-intl'
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import destinations from './destinations';
 import Link from 'next/link';
 
-export default function Adventures() {
-    const t = useTranslations('Adventures');
+export default async function Adventures({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+    const t = await getTranslations({ locale, namespace: 'Adventures' });
 
     return (
         <main className='overflow-hidden'>

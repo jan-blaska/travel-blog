@@ -3,28 +3,15 @@ title: "Istanbul"
 date: "01.10.2014"
 ---
 
-import ImageNextToText from "@/components/ImageNextToText";
-import ImageNextToImage from "@/components/ImageNextToImage";
-import ImageSlider from "@/components/ImageSlider";
-import ImageCarousel from "@/components/ImageCarousel";
-import MainHeader from "@/components/MainHeader";
-
 <ImageNextToText imageSrc="/countries/turkey/mosque-istanbul.jpg" imageAlt="Hagia Sofia mosque">
   <span className="text-xl md:text-2xl">
     Istanbul is magical place where the east meets the west.
   </span>
 </ImageNextToText>
 
-<br />
-<br />
-<br />
+<MainHeader className="pt-16">Erasmus study exchange</MainHeader>
 
-<MainHeader>Erasmus study exchange</MainHeader>
-
-<br />
-<br />
-
-<ImageNextToText imageSrc="/countries/turkey/istanbul/basilica-cistern.png" imageAlt="Basilica Cistern" reverse={true}>
+<ImageNextToText imageSrc="/countries/turkey/istanbul/basilica-cistern.png" imageAlt="Basilica Cistern" reverse={true} className="pt-12">
   <span className="text-lg md:text-xl text-(--green) font-bold">
     First steps in a foreign country 👣
   </span>
@@ -36,35 +23,24 @@ import MainHeader from "@/components/MainHeader";
   To live with one of my classmates was beneficial, because we could manage things about the school together. Sharing the flat with people from the different countries was the perfect starting point to start communicating in English. I remember the beginning was very tough, I was only listening but it took me just 3 weeks to be able to speak 😁.
 </ImageNextToText>
 
-<ImageCarousel imageList={[
+<ImageSliderWide imageList={[
   "/countries/turkey/mosque-istanbul.jpg",
   "/countries/switzerland/ship.jpg",
   "/countries/turkey/istanbul/antient-site.png",
   "/countries/turkey/istanbul/antient-temple.png",
   "/countries/turkey/istanbul/lake-autumn.png",
-]} />
-
-<br />
+]} className="my-12" />
 
 <span className="text-lg md:text-xl text-(--green) font-bold">
     Erasmus Community
 </span>
-
 <br />
-
 <p>Surrounded by the students from all around the Europe and volunteers from local ESN group, I quickly started getting to know Istanbul city and its surroundings. I tasted the local food, got used to drinking the turkish tea and smoke cigaretes. Everything what was happening was unique and usually for the first time in my life. I traveled by the ferry. I attended the boat party. I tried hitchhiking. Most impressive about Istanbul was its beautiful historical centre, collosal mosques and bosphorus with all the ferries and ships, fishermen and smell of tasty food.</p>
-
-<br />
 
 <ImageSlider imageList={[
   "/countries/turkey/mosque-istanbul.jpg",
   "/countries/turkey/istanbul/table-with-cups-of-tea.png",
-]} />
-
-<br />
-<br />
-<br />
-<br />
+]} className="mt-8 mb-16" />
 
 <ImageNextToText imageSrc="/countries/turkey/istanbul/lying-on-the-snow.png" imageAlt="Person lying on the snow">
   <span className="text-lg md:text-xl text-(--green) font-bold">
@@ -75,6 +51,3 @@ import MainHeader from "@/components/MainHeader";
   <br />
   Another time, I joined group of experienced travelers and went explore eastern part of Turkey. We rented a car and started road trip adventure. I learned so much from them. The way how they managed travel plans, how they behaved in different situations, I grew as a traveler so fast!
 </ImageNextToText>
-
-
-<br />

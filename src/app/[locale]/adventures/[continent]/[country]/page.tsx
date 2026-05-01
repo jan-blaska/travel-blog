@@ -1,8 +1,12 @@
 import { promises as fs } from "fs";
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
+import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import ImageNextToText from "@/components/ImageNextToText";
+import ImageNextToImage from "@/components/ImageNextToImage";
+import ImageSlider from "@/components/ImageSlider";
+import ImageSliderWide from "@/components/ImageSliderWide";
 import CardLink from "@/components/CardLink";
 import MainHeader from "@/components/MainHeader";
 
@@ -12,10 +16,33 @@ type CountryPageParams = {
   country: string;
 };
 
+export async function generateStaticParams() {
+  const contentDir = path.join(process.cwd(), 'src', 'content');
+  const params: Array<{ locale: string; continent: string; country: string }> = [];
+
+  const locales = await fs.readdir(contentDir, { withFileTypes: true });
+  for (const localeEntry of locales.filter(e => e.isDirectory())) {
+    const continents = await fs.readdir(path.join(contentDir, localeEntry.name), { withFileTypes: true });
+    for (const continentEntry of continents.filter(e => e.isDirectory())) {
+      const countries = await fs.readdir(path.join(contentDir, localeEntry.name, continentEntry.name), { withFileTypes: true });
+      for (const countryEntry of countries.filter(e => e.isDirectory())) {
+        params.push({
+          locale: localeEntry.name,
+          continent: continentEntry.name,
+          country: countryEntry.name,
+        });
+      }
+    }
+  }
+
+  return params;
+}
+
 export default async function CountryPage({ params }: {
   params: Promise<CountryPageParams>;
 }) {
   const { locale, continent, country } = await params;
+  setRequestLocale(locale);
 
   const contentPath = path.join(process.cwd(), 'src/content', locale, continent, country, "index.mdx");
   let source: string;
@@ -33,6 +60,9 @@ export default async function CountryPage({ params }: {
     },
     components: {
       ImageNextToText,
+      ImageNextToImage,
+      ImageSlider,
+      ImageSliderWide,
       CardLink,
       MainHeader,
     }

@@ -9,7 +9,7 @@ type Props = {
     className?: string;
 }
 
-export default function ImageSlider({ imageList, className }: Props) {
+export default function ImageSlider({ imageList = [], className }: Props) {
     const [isAnimating, setIsAnimating] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -51,7 +51,7 @@ export default function ImageSlider({ imageList, className }: Props) {
     };
 
     return (
-        <div className={clsx("relative flex w-full h-full aspect-[3/2] rounded-xl overflow-hidden", className)}>
+        <div className={clsx("relative flex w-full aspect-[3/2] rounded-xl overflow-hidden", className)}>
             {imageList.map((src, index) =>
                 <img
                     key={index}

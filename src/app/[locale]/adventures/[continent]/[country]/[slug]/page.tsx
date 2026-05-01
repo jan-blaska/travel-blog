@@ -1,11 +1,13 @@
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
+import { setRequestLocale } from "next-intl/server";
 import ImageNextToText from "@/components/ImageNextToText";
 import { promises as fs } from "fs";
 import ImageSliderWide from "@/components/ImageSliderWide";
 import ImageSlider from "@/components/ImageSlider";
 import ImageNextToImage from "@/components/ImageNextToImage";
 import MainHeader from "@/components/MainHeader";
+import CardLink from "@/components/CardLink";
 import { notFound } from "next/navigation";
 
 type ArticlePageParams = {
@@ -15,10 +17,37 @@ type ArticlePageParams = {
   slug: string;
 };
 
+export async function generateStaticParams() {
+  const contentDir = path.join(process.cwd(), 'src', 'content');
+  const params: Array<{ locale: string; continent: string; country: string; slug: string }> = [];
+
+  const locales = await fs.readdir(contentDir, { withFileTypes: true });
+  for (const localeEntry of locales.filter(e => e.isDirectory())) {
+    const continents = await fs.readdir(path.join(contentDir, localeEntry.name), { withFileTypes: true });
+    for (const continentEntry of continents.filter(e => e.isDirectory())) {
+      const countries = await fs.readdir(path.join(contentDir, localeEntry.name, continentEntry.name), { withFileTypes: true });
+      for (const countryEntry of countries.filter(e => e.isDirectory())) {
+        const files = await fs.readdir(path.join(contentDir, localeEntry.name, continentEntry.name, countryEntry.name), { withFileTypes: true });
+        for (const file of files.filter(e => e.isFile() && e.name.endsWith('.mdx') && e.name !== 'index.mdx')) {
+          params.push({
+            locale: localeEntry.name,
+            continent: continentEntry.name,
+            country: countryEntry.name,
+            slug: file.name.replace('.mdx', ''),
+          });
+        }
+      }
+    }
+  }
+
+  return params;
+}
+
 export default async function ArticlePage({ params }: {
   params: Promise<ArticlePageParams>;
 }) {
   const { locale, continent, country, slug } = await params;
+  setRequestLocale(locale);
 
   let content: string;
   try {
@@ -38,6 +67,7 @@ export default async function ArticlePage({ params }: {
       ImageSliderWide,
       ImageSlider,
       MainHeader,
+      CardLink,
     }
   });
 
