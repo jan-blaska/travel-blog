@@ -57,6 +57,7 @@ export default async function CountryPage({ params }: {
     source,
     options: {
       parseFrontmatter: true,
+      blockJS: false,
     },
     components: {
       ImageNextToText,

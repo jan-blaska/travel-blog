@@ -60,6 +60,7 @@ export default async function ArticlePage({ params }: {
     source: content,
     options: {
       parseFrontmatter: true,
+      blockJS: false,
     },
     components: {
       ImageNextToText,
