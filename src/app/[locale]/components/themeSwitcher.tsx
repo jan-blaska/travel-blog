@@ -2,7 +2,7 @@
 
 import { FiSun, FiMoon } from 'react-icons/fi'
 import { useState, useEffect } from 'react'
-import { useTheme } from 'next-themes'
+import { useTheme } from '@/components/ThemeProvider'
 
 const ThemeSwitcher = () => {
     const [mounted, setMounted] = useState(false)

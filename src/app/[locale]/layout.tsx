@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Albert_Sans, Montserrat_Alternates, Comforter_Brush, Barlow_Condensed, Cinzel } from "next/font/google"
-import { ThemeProvider } from 'next-themes'
+import ThemeProvider from "@/components/ThemeProvider"
+import { cookies } from 'next/headers'
 import type { Metadata } from 'next'
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
@@ -65,11 +66,15 @@ export default async function LocaleLayout({
   }
   setRequestLocale(locale);
 
+  const cookieStore = await cookies();
+  const themeCookie = cookieStore.get('theme')?.value;
+  const resolvedTheme = themeCookie === 'dark' ? 'dark' : themeCookie === 'light' ? 'light' : undefined;
+
   return (
-    <html suppressHydrationWarning lang={locale}>
+    <html suppressHydrationWarning lang={locale} className={resolvedTheme ?? ''}>
       <body className={`${albertSans.className} ${montserratAlternates.variable} ${comforterBrush.variable} ${barlowCondensed.variable} ${cinzel.variable}`}>
         <NextIntlClientProvider>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ThemeProvider>
             <header>
               <Navbar />
             </header>

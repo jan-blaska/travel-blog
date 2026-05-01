@@ -4,7 +4,7 @@ import { MapContainer, GeoJSON, TileLayer } from "react-leaflet"
 import { LatLngExpression, LatLngTuple } from 'leaflet';
 import { useEffect, useState, useCallback } from "react"
 import type { GeoJsonObject, Feature } from "geojson"
-import { useTheme } from 'next-themes'
+import { useTheme } from '@/components/ThemeProvider'
 
 import "leaflet/dist/leaflet.css"
 import "leaflet-defaulticon-compatibility"
