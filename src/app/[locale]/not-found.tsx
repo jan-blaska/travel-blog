@@ -1,8 +1,9 @@
-import { useTranslations } from 'next-intl'
+import { getTranslations, getLocale } from 'next-intl/server'
 import { Link } from '@/i18n/navigation'
 
-export default function NotFound() {
-    const t = useTranslations('NotFound')
+export default async function NotFound() {
+    const locale = await getLocale()
+    const t = await getTranslations({ locale, namespace: 'NotFound' })
 
     return (
         <div className='flex justify-center h-[calc(100vh*(4/5))]'>

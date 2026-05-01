@@ -21,7 +21,8 @@
       "Bash(node -e \"const pkg = require\\('./node_modules/next-intl/package.json'\\); console.log\\(pkg.version\\)\")",
       "Bash(git diff *)",
       "Bash(node *)",
-      "PowerShell(npm show *)"
+      "PowerShell(npm show *)",
+      "Bash(Get-ChildItem C:\\\\Users\\\\honza\\\\Desktop\\\\programovani\\\\travel-blog\\\\src\\\\app *)"
     ]
   }
 }
