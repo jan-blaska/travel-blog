@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "*.mdx": "mdx"
+    },
+    "[mdx]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "other": true,
+            "strings": true,
+            "comments": false
+        }
+    }
+}

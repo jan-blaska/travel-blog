@@ -1,0 +1,66 @@
+{
+    "MainHeader": {
+        "prefix": "mh",
+        "scope": "mdx",
+        "description": "Section heading with green underline",
+        "body": ["<MainHeader>$1</MainHeader>", "$0"]
+    },
+    "ImageNextToText": {
+        "prefix": "int",
+        "scope": "mdx",
+        "description": "Image beside a text block",
+        "body": [
+            "<ImageNextToText imageSrc=\"$1\" imageAlt=\"$2\">",
+            "\t$3",
+            "</ImageNextToText>",
+            "$0"
+        ]
+    },
+    "ImageNextToText reversed": {
+        "prefix": "intr",
+        "scope": "mdx",
+        "description": "Image beside a text block (image on the right)",
+        "body": [
+            "<ImageNextToText imageSrc=\"$1\" imageAlt=\"$2\" reverse={true}>",
+            "\t$3",
+            "</ImageNextToText>",
+            "$0"
+        ]
+    },
+    "ImageNextToImage": {
+        "prefix": "ini",
+        "scope": "mdx",
+        "description": "Two images side by side",
+        "body": [
+            "<ImageNextToImage imageOneSrc=\"$1\" imageOneAlt=\"$2\" imageTwoSrc=\"$3\" imageTwoAlt=\"$4\" />",
+            "$0"
+        ]
+    },
+    "ImageSlider": {
+        "prefix": "isl",
+        "scope": "mdx",
+        "description": "Auto-advancing image carousel",
+        "body": [
+            "<ImageSlider imageList={[\"$1\"]} />",
+            "$0"
+        ]
+    },
+    "ImageSliderWide": {
+        "prefix": "islw",
+        "scope": "mdx",
+        "description": "Full-width auto-advancing image carousel",
+        "body": [
+            "<ImageSliderWide imageList={[\"$1\"]} />",
+            "$0"
+        ]
+    },
+    "CardLink": {
+        "prefix": "cl",
+        "scope": "mdx",
+        "description": "Card with image, title, description linking to a route",
+        "body": [
+            "<CardLink title=\"$1\" description=\"$2\" href=\"$3\" image=\"$4\" />",
+            "$0"
+        ]
+    }
+}
