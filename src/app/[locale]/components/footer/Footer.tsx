@@ -13,7 +13,7 @@ export default function Footer() {
                 <path style={{ fill: 'var(--footer-background)' }} fillOpacity="1" d="M0,160L26.7,181.3C53.3,203,107,245,160,234.7C213.3,224,267,160,320,154.7C373.3,149,427,203,480,234.7C533.3,267,587,277,640,272C693.3,267,747,245,800,240C853.3,235,907,245,960,234.7C1013.3,224,1067,192,1120,160C1173.3,128,1227,96,1280,96C1333.3,96,1387,128,1413,144L1440,160L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"></path>
             </svg>
             <div className="bg-(--footer-background) text-white flex justify-center pb-8 pt-8 md:pt-4">
-                <div className="flex flex-col max-w-5xl w-[95%] justify-center">
+                <div className="flex flex-col max-w-6xl w-[95%] justify-center">
                     <div className="flex flex-col sm:flex-row justify-between">
                         <div className="flex flex-col justify-between gap-8 sm:w-3/5 items-center sm:items-start">
                             <span className="font-cinzel font-bold tracking-widest text-xl md:text-2xl">{t('Home')}</span>

@@ -16,7 +16,7 @@ export default async function About({ params }: { params: Promise<{ locale: stri
                 </div>
             </div>
 
-            <section className="container w-[95%] max-w-5xl mx-auto pt-8 md:pt-24 pb-8 md:pb-24" aria-labelledby="why-do-I-travel">
+            <section className="container w-[95%] max-w-6xl mx-auto pt-8 md:pt-24 pb-8 md:pb-24" aria-labelledby="why-do-I-travel">
                 <div className="flex flex-col md:flex-row gap-4 md:gap-16">
                     <div className="flex flex-col w-full md:w-1/2 gap-4">
                         <h2 id="why-do-I-travel" className="text-2xl font-semibold">{t('WhyITravel.Title')}</h2>
@@ -53,7 +53,7 @@ export default async function About({ params }: { params: Promise<{ locale: stri
 
             <hr className="border-gray-200 dark:border-gray-700" aria-hidden="true" />
 
-            <section className="container w-[95%] max-w-5xl mx-auto pt-8 md:pt-24 pb-8 md:pb-24" aria-labelledby="how-I-started-to-travel">
+            <section className="container w-[95%] max-w-6xl mx-auto pt-8 md:pt-24 pb-8 md:pb-24" aria-labelledby="how-I-started-to-travel">
                 <div className="flex flex-col md:flex-row-reverse gap-4 md:gap-16">
                     <div className="flex flex-col w-full md:w-1/2 gap-4">
                         <h2 id="how-I-started-to-travel" className="text-2xl font-semibold">{howItStarted.Title}</h2>
