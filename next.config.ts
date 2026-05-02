@@ -3,6 +3,14 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 const nextConfig: NextConfig = {
     pageExtensions: ["ts", "tsx", "mdx"],
+    images: {
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "res.cloudinary.com",
+            },
+        ],
+    },
 };
 
 const withNextIntl = createNextIntlPlugin();

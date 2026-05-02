@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import clsx from "clsx";
+import { getImageSrc } from "@/lib/image";
 
 type Props = {
     imageList: string[];
@@ -55,7 +56,7 @@ export default function ImageSlider({ imageList = [], className }: Props) {
             {imageList.map((src, index) =>
                 <img
                     key={index}
-                    src={src}
+                    src={getImageSrc(src)}
                     alt={`Slide ${index + 1}`}
                     style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                     className={`w-full h-full object-cover flex-shrink-0 transition-all duration-1000 ease-in-out`}

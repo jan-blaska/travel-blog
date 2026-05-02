@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { getImageSrc } from "@/lib/image";
 
 type Props = {
     children: React.ReactNode;
@@ -11,7 +12,7 @@ type Props = {
 export default function ImageNextToText({ children, imageSrc, imageAlt = "", reverse = false, className }: Props) {
     return (
         <div className={clsx("flex flex-col items-center gap-4 md:gap-6", className, reverse ? "md:flex-row-reverse" : "md:flex-row")}>
-            <img src={imageSrc} alt={imageAlt} className="w-full md:w-1/2 rounded-lg md:rounded-2xl shadow-md" />
+            <img src={getImageSrc(imageSrc)} alt={imageAlt} className="w-full md:w-1/2 rounded-lg md:rounded-2xl shadow-md" />
             <div className="w-full md:w-1/2">
                 {children}
             </div>
