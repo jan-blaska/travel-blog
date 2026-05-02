@@ -22,7 +22,7 @@ export default async function TravelTips({ params }: { params: Promise<{ locale:
                     <div className="w-full z-20 flex gap-6 flex-col py-6 min-h-full">
                         {destinations.map((continent) => {
                             return <div key={continent.params} className="max-w-6xl w-[95%] mx-auto">
-                                <span className="uppercase text-2xl font-bold">{t(continent.translationKey)}</span>
+                                <span className="uppercase text-md font-bold">{t(continent.translationKey)}</span>
                                 <ul className="flex flex-wrap font-bold text-4xl">
                                     {continent.countries.map((country) => {
                                         return (

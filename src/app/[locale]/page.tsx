@@ -22,12 +22,12 @@ export default function Home() {
 
             { /* overlay text on the video */}
             <div className="absolute flex flex-col bottom-[20%] left-1/6 md:left-1/4 text-white z-20 gap-2 md:gap-6">
-                <span className="font-cinzel font-bold tracking-widest text-3xl md:text-5xl">
+                <span className="font-cinzel font-bold tracking-widest text-4xl md:text-7xl">
                     {t('Title.Text')}
                 </span>
                 <button
                     onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="uppercase text-xl px-10 md:px-20 py-3 md:py-6 w-min border-1 cursor-pointer bg-transparent hover:bg-white hover:text-black"
+                    className="uppercase text-md px-10 md:px-20 py-3 md:py-6 w-min border-1 cursor-pointer bg-transparent hover:bg-white hover:text-black"
                 >{t('Title.ButtonText')}</button>
             </div>
 
