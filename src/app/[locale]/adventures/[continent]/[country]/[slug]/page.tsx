@@ -1,6 +1,6 @@
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import ImageNextToText from "@/components/ImageNextToText";
 import { promises as fs } from "fs";
 import ImageSliderWide from "@/components/ImageSliderWide";
@@ -9,6 +9,7 @@ import ImageNextToImage from "@/components/ImageNextToImage";
 import MainHeader from "@/components/MainHeader";
 import CardLink from "@/components/CardLink";
 import { notFound } from "next/navigation";
+import Breadcrumb from "@/app/[locale]/components/Breadcrumb";
 
 type ArticlePageParams = {
   locale: string;
@@ -49,6 +50,8 @@ export default async function ArticlePage({ params }: {
   const { locale, continent, country, slug } = await params;
   setRequestLocale(locale);
 
+  const t = await getTranslations();
+
   let content: string;
   try {
     content = await fs.readFile(path.join(process.cwd(), 'src/content', locale, continent, country, `${slug}.mdx`), 'utf-8');
@@ -72,8 +75,19 @@ export default async function ArticlePage({ params }: {
     }
   });
 
+  const breadcrumbItems = [
+    { label: t("Navbar.Adventures"), href: "/adventures" as const },
+    { label: t(`Adventures.DestinationsList.continent.${continent}` as Parameters<typeof t>[0]) },
+    {
+      label: t(`Adventures.DestinationsList.country.${country}` as Parameters<typeof t>[0]),
+      href: `/adventures/${continent}/${country}` as `/adventures/${string}/${string}`,
+    },
+    { label: data.frontmatter.title },
+  ];
+
   return (
     <div className="w-[95%] mx-auto max-w-6xl">
+      <Breadcrumb items={breadcrumbItems} />
       <h1 className="overflow-hidden my-4 md:my-8 relative text-7xl md:text-9xl font-barlow-condensed uppercase tracking-wider before:content-[''] before:absolute before:top-2 md:before:top-5 before:left-[-5%] before:h-[7px] md:before:h-[15px] before:w-[30%] before:bg-(--orange) before:-z-10 after:content-[''] after:absolute after:bottom-1 md:after:bottom-2 after:right-0 after:h-[7px] md:after:h-[15px] after:w-[70%] after:bg-(--green) after:-z-10">
         {data.frontmatter.title}
       </h1>
