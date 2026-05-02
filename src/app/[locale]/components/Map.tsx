@@ -49,7 +49,7 @@ const Map = ({ zoom, posix }: MapProps) => {
             center={posix}
             zoom={zoom}
             scrollWheelZoom={false}
-            style={{ height: "100%", width: "100%" }}
+            style={{ height: "100%", width: "100%", background: "var(--background)" }}
             maxBounds={[[-90, -180], [90, 180]]}
             maxBoundsViscosity={1.0}
         >
