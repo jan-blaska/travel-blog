@@ -34,10 +34,10 @@ const Navbar = () => {
 
                     <ul className="flex items-center gap-10">
                         {navLinks.map(({ href, label }) => (
-                            <li key={href} className="group relative py-1">
+                            <li key={href} className="group relative">
                                 <Link
                                     href={href}
-                                    className="text-xs font-bold tracking-[0.18em] uppercase transition-colors duration-300 group-hover:text-(--green)"
+                                    className="block py-1 text-xs font-bold tracking-[0.18em] uppercase transition-colors duration-300 group-hover:text-(--green)"
                                 >
                                     {label}
                                 </Link>
