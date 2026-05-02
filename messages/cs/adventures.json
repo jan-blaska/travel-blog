@@ -11,6 +11,10 @@
                 "africa": "Afrika",
                 "north-america": "Severní Amerika"
             },
+            "tripsLabel": "Výlety",
+            "trip": {
+                "europe-hitchhike": "Stopem přes Evropu"
+            },
             "country": {
                 "albania": "Albánie",
                 "finland": "Finsko",

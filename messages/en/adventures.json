@@ -11,6 +11,10 @@
                 "africa": "Africa",
                 "north-america": "North America"
             },
+            "tripsLabel": "Trips",
+            "trip": {
+                "europe-hitchhike": "Hitchhike Europe"
+            },
             "country": {
                 "albania": "Albania",
                 "finland": "Finland",

@@ -13,6 +13,9 @@ const destinationsList = [
             { translationKey: "DestinationsList.country.spain", params: "spain" },
             { translationKey: "DestinationsList.country.switzerland", params: "switzerland" },
             { translationKey: "DestinationsList.country.united-kingdom", params: "united-kingdom" }
+        ],
+        trips: [
+            { translationKey: "DestinationsList.trip.europe-hitchhike", params: "europe-hitchhike" }
         ]
     },
     {

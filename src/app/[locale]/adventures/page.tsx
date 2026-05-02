@@ -36,6 +36,23 @@ export default async function Adventures({ params }: { params: Promise<{ locale:
                                             </li>
                                         )
                                     })}
+                                    {continent.trips && continent.trips.length > 0 && (
+                                        <>
+                                            <li className="w-full px-4 pt-4 pb-1 text-sm uppercase text-(--orange) font-normal tracking-widest">
+                                                — {t('DestinationsList.tripsLabel')} —
+                                            </li>
+                                            {continent.trips.map((trip) => (
+                                                <li key={trip.params}>
+                                                    <Link
+                                                        href={`/adventures/${continent.params.toLowerCase()}/${trip.params}`}
+                                                        className="block px-4 py-2 hover:text-(--green)"
+                                                    >
+                                                        {t(trip.translationKey)}
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                        </>
+                                    )}
                                 </ul>
                             </div>
                         })}
