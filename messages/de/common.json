@@ -1,0 +1,23 @@
+{
+    "NotFound": {
+        "Title": "404 - Seite nicht gefunden",
+        "Prompt": "Überprüfe die URL oder kehre zur ",
+        "HomePage": "Startseite"
+    },
+    "Navbar": {
+        "AboutMe": "Über mich",
+        "Contact": "Kontakt",
+        "Adventures": "Abenteuer",
+        "TravelTips": "Reisetipps",
+        "Home": "JAN UKU TRAVEL"
+    },
+    "Footer": {
+        "AboutMe": "Über mich",
+        "Contact": "Kontakt",
+        "Adventures": "Abenteuer",
+        "TravelTips": "Reisetipps",
+        "Home": "JAN UKU TRAVEL",
+        "SocialMediaPrompt": "Folge mir in den sozialen Medien!",
+        "Copyright": "© 2026 Jan Uku Travel"
+    }
+}

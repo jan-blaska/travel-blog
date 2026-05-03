@@ -1,0 +1,34 @@
+{
+    "About": {
+        "Header": {
+            "Title": "Über mich",
+            "Subtitle": "Reisender, Fotograf und Abenteurer"
+        },
+        "WhyITravel": {
+            "Title": "Warum ich reise",
+            "Content": "Die Welt ist ein wunderbarer Ort mit so vielem zu bieten. Ich liebe es einfach, irgendwo Unbekanntes hinzugehen und von der wunderschönen Natur, der Gastfreundschaft der Einheimischen oder einfach davon begeistert zu sein, wie alles etwas anders ist als das, was ich aus meiner Heimat kenne. Neue Orte zu erkunden ist eine der schönsten Erfahrungen in meinem Leben."
+        },
+        "Features": [
+            {
+                "Title": "Authentische Verbindungen",
+                "Text": "Ich reise nicht, um dem Leben zu entfliehen, sondern um in Kontakt zu kommen — mit Menschen, Orten und Kulturen, die meine Perspektive herausfordern."
+            },
+            {
+                "Title": "Entschleunigtes Leben",
+                "Text": "Ich glaube daran, sich Zeit zu nehmen — sei es beim Genießen von Straßenessen in Vietnam oder beim Beobachten des Sonnenuntergangs auf den Kanaren."
+            },
+            {
+                "Title": "Immer Lernen",
+                "Text": "Jede Reise ist eine Lektion. Ich habe Sprachen, Instrumente und Lebensphilosophien gelernt — alles auf der Straße."
+            }
+        ],
+        "HowItStarted": {
+            "Title": "Wie ich mit dem Reisen begann",
+            "Content": [
+                "Es war das Jahr 2014, ich war im letzten Jahr meines Bachelorstudiums und entschied mich, mich für das Studentenaustauschprogramm Erasmus zu bewerben. Ich hatte buchstäblich keine Meinung zu einer bestimmten Stadt oder einem Land, aber ich hatte das Gefühl, dass ein südliches Land am besten passen würde. Ich schwankte zwischen Spanien, Portugal und der Türkei, aber für die ersten beiden wollten sie, dass ich Spanisch oder Portugiesisch spreche. Also war es entschieden: Ich bereitete mich auf die Türkei vor, genauer gesagt auf die Stadt Istanbul 🕌.",
+                "Es war zunächst eine große Herausforderung für mich, weil ich kaum Englisch sprechen konnte. Natürlich hatte ich Englisch gelernt, seit ich ein Kind war, aber niemand hatte mir wirklich beigebracht, wie man spricht. Zum Glück war ich unter anderen Studenten aus allen Ländern Europas, und schon bald konnte ich mich mit ihnen unterhalten. Ich konnte wirklich erleben, wie sich mein Gehirn an eine andere Sprache gewöhnte.",
+                "Ich hatte das Glück, Studenten zu treffen, die großartige Reiseerfahrungen aller Art hatten. Es gab Menschen, die das Trampen liebten, andere, die gerne Roadtrips machten, und manche, die einfach gerne in der Stadt Istanbul abhingen."
+            ]
+        }
+    }
+}

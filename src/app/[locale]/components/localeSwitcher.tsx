@@ -21,6 +21,7 @@ export default function LocaleSwitcher() {
     const languages: Record<string, { name: string, flag: string }> = {
         en: { name: "English", flag: "🇬🇧" },
         cs: { name: "Čeština", flag: "🇨🇿" },
+        de: { name: "Deutsch", flag: "🇩🇪" },
     };
 
     const languageToDisplay = languages[currentLocale]?.name || 'English';

@@ -1,0 +1,25 @@
+{
+    "HomePage": {
+        "Title": {
+            "Text": "JAN UKU TRAVEL",
+            "ButtonText": "Erkunden",
+            "Name": "Jan",
+            "Surname": "Blaska"
+        },
+        "Greeting": {
+            "Hello": "Hallo! ",
+            "MyNameIs": "Mein Name ist",
+            "JanBlaska": "Jan.",
+            "Welcome": "Willkommen auf meinem Reiseblog!",
+            "MakeATea": "Mach dir einen Tee oder Kaffee, und ",
+            "LetsExplore": "lass uns gemeinsam ein Abenteuer erkunden 📷."
+        },
+        "Map": {
+            "Prompt": "Klicke auf das Land, das dich interessiert"
+        },
+        "Citation": {
+            "Text": "Eine Reise von tausend Meilen beginnt mit einem Schritt.",
+            "Author": "Lao Tzu"
+        }
+    }
+}
