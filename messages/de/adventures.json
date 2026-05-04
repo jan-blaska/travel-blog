@@ -13,22 +13,24 @@
             },
             "tripsLabel": "Reisen",
             "trip": {
-                "europe-hitchhike": "Europa per Anhalter"
+                "hitchhiking-to-athens-2016": "Trampen nach Athen 2016",
+                "hitchhiking-to-black-sea-2016": "Trampen ans Schwarze Meer 2016",
+                "hitchhiking-to-gdansk-2024": "Trampen nach Danzig 2024",
+                "hitchhiking-to-paris-2016": "Trampen nach Paris 2016",
+                "interrail-2025": "Interrail 2025"
             },
             "country": {
-                "albania": "Albanien",
                 "finland": "Finnland",
-                "france": "Frankreich",
                 "greece": "Griechenland",
+                "italy": "Italien",
                 "norway": "Norwegen",
                 "portugal": "Portugal",
-                "romania": "Rumänien",
                 "spain": "Spanien",
-                "switzerland": "Schweiz",
                 "united-kingdom": "Vereinigtes Königreich",
                 "israel": "Israel",
                 "jordan": "Jordanien",
                 "philippines": "Philippinen",
+                "thailand": "Thailand",
                 "turkey": "Türkei",
                 "morocco": "Marokko",
                 "dominican-republic": "Dominikanische Republik"

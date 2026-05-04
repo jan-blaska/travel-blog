@@ -13,22 +13,24 @@
             },
             "tripsLabel": "Trips",
             "trip": {
-                "europe-hitchhike": "Hitchhike Europe"
+                "hitchhiking-to-athens-2016": "Hitchhiking to Athens 2016",
+                "hitchhiking-to-black-sea-2016": "Hitchhiking to Black Sea 2016",
+                "hitchhiking-to-gdansk-2024": "Hitchhiking to Gdańsk 2024",
+                "hitchhiking-to-paris-2016": "Hitchhiking to Paris 2016",
+                "interrail-2025": "Interrail 2025"
             },
             "country": {
-                "albania": "Albania",
                 "finland": "Finland",
-                "france": "France",
                 "greece": "Greece",
+                "italy": "Italy",
                 "norway": "Norway",
                 "portugal": "Portugal",
-                "romania": "Romania",
                 "spain": "Spain",
-                "switzerland": "Switzerland",
                 "united-kingdom": "United Kingdom",
                 "israel": "Israel",
                 "jordan": "Jordan",
                 "philippines": "Philippines",
+                "thailand": "Thailand",
                 "turkey": "Turkey",
                 "morocco": "Morocco",
                 "dominican-republic": "Dominican Republic"
