@@ -1,5 +1,6 @@
 /**
- * Bulk upload script: uploads public/countries/ to Cloudinary preserving folder structure.
+ * Bulk upload script: uploads public/countries/ and public/adventures/ to Cloudinary
+ * preserving folder structure.
  *
  * Setup:
  *   npm install cloudinary dotenv
@@ -29,8 +30,10 @@ cloudinary.config({
 });
 
 const IMAGE_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".webp", ".gif", ".avif"]);
-// Point this at the local folder where your real photos are organized
-const SOURCE_DIR = join(__dirname, "../public/countries");
+const SOURCE_DIRS = [
+    join(__dirname, "../public/countries"),
+    join(__dirname, "../public/adventures"),
+];
 
 function collectImages(dir) {
     const results = [];
@@ -46,7 +49,7 @@ function collectImages(dir) {
 }
 
 async function uploadAll() {
-    const images = collectImages(SOURCE_DIR);
+    const images = SOURCE_DIRS.flatMap(dir => collectImages(dir));
     console.log(`Found ${images.length} images to upload.`);
 
     for (const filePath of images) {

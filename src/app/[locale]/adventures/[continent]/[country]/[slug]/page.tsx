@@ -10,6 +10,7 @@ import MainHeader from "@/components/MainHeader";
 import CardLink from "@/components/CardLink";
 import { notFound } from "next/navigation";
 import Breadcrumb from "@/app/[locale]/components/Breadcrumb";
+import destinationsList from "@/app/[locale]/adventures/destinations";
 
 type ArticlePageParams = {
   locale: string;
@@ -75,11 +76,17 @@ export default async function ArticlePage({ params }: {
     }
   });
 
+  const continentData = destinationsList.find(c => c.params === continent);
+  const isTrip = continentData?.trips?.some(t => t.params === country);
+  const countryOrTripLabel = isTrip
+    ? t(`Adventures.DestinationsList.trip.${country}` as Parameters<typeof t>[0])
+    : t(`Adventures.DestinationsList.country.${country}` as Parameters<typeof t>[0]);
+
   const breadcrumbItems = [
     { label: t("Navbar.Adventures"), href: "/adventures" as const },
     { label: t(`Adventures.DestinationsList.continent.${continent}` as Parameters<typeof t>[0]) },
     {
-      label: t(`Adventures.DestinationsList.country.${country}` as Parameters<typeof t>[0]),
+      label: countryOrTripLabel,
       href: `/adventures/${continent}/${country}` as `/adventures/${string}/${string}`,
     },
     { label: data.frontmatter.title },

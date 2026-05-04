@@ -10,6 +10,7 @@ import ImageSliderWide from "@/components/ImageSliderWide";
 import CardLink from "@/components/CardLink";
 import MainHeader from "@/components/MainHeader";
 import Breadcrumb from "@/app/[locale]/components/Breadcrumb";
+import destinationsList from "@/app/[locale]/adventures/destinations";
 
 type CountryPageParams = {
   locale: string;
@@ -72,10 +73,16 @@ export default async function CountryPage({ params }: {
     }
   });
 
+  const continentData = destinationsList.find(c => c.params === continent);
+  const isTrip = continentData?.trips?.some(t => t.params === country);
+  const countryOrTripLabel = isTrip
+    ? t(`Adventures.DestinationsList.trip.${country}` as Parameters<typeof t>[0])
+    : t(`Adventures.DestinationsList.country.${country}` as Parameters<typeof t>[0]);
+
   const breadcrumbItems = [
     { label: t("Navbar.Adventures"), href: "/adventures" as const },
     { label: t(`Adventures.DestinationsList.continent.${continent}` as Parameters<typeof t>[0]) },
-    { label: t(`Adventures.DestinationsList.country.${country}` as Parameters<typeof t>[0]) },
+    { label: countryOrTripLabel },
   ];
 
   return (
