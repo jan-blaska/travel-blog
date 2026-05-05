@@ -3,31 +3,33 @@ title: "Venedig"
 date: "TT.MM.JJJJ"
 ---
 
-<ImageNextToText imageSrc="/adventures/europe/italy/venice/IMG_1200.JPG" imageAlt="Venedig">
-  <span className="text-xl md:text-2xl">
-    [PLATZHALTER – Einleitung: Was macht Venedig so unvergesslich? Kanäle, Gondeln, Masken, Geschichte?]
-  </span>
-</ImageNextToText>
+<Section topSection>
+  <ImageNextToText imageSrc="/adventures/europe/italy/venice/IMG_1200.JPG" imageAlt="Venedig">
+    <span className="text-xl md:text-2xl">
+      [PLATZHALTER – Einleitung: Was macht Venedig so unvergesslich? Kanäle, Gondeln, Masken, Geschichte?]
+    </span>
+  </ImageNextToText>
+</Section>
 
-<MainHeader>[PLATZHALTER – Abschnittstitel]</MainHeader>
-
-<ImageNextToText imageSrc="/adventures/europe/italy/venice/IMG_1205.JPG" imageAlt="Venedig Kanäle" reverse={true} className="pt-12">
-  <span className="text-lg md:text-xl text-(--green) font-bold">[PLATZHALTER – Unterabschnittstitel]</span>
-  <br />
-  [PLATZHALTER – Beschreibe das Labyrinth der Kanäle, den Markusplatz und das einzigartige Flair der Stadt.]
-</ImageNextToText>
-
-<ImageSliderWide imageList={[
-  "/adventures/europe/italy/venice/IMG_1200.JPG",
-  "/adventures/europe/italy/venice/IMG_1205.JPG",
-]} className="my-12" />
-
-<span className="text-lg md:text-xl text-(--green) font-bold">
-    [PLATZHALTER – Weiterer Abschnittstitel]
-</span>
-<br />
-<p>[PLATZHALTER – Weitere Eindrücke und Tipps für einen Besuch in Venedig abseits der Touristenmassen.]</p>
-
-<ImageSlider imageList={[
-  "/adventures/europe/italy/venice/IMG_1200.JPG",
-]} className="mt-8 mb-16" />
+<Section>
+  <MainHeader>[PLATZHALTER – Abschnittstitel]</MainHeader>
+  <ImageNextToText imageSrc="/adventures/europe/italy/venice/IMG_1205.JPG" imageAlt="Venedig Kanäle" reverse={true}>
+    <span className="text-lg md:text-xl text-(--green) font-bold">[PLATZHALTER – Unterabschnittstitel]</span>
+    <br />
+    [PLATZHALTER – Beschreibe das Labyrinth der Kanäle, den Markusplatz und das einzigartige Flair der Stadt.]
+  </ImageNextToText>
+  <ImageSliderWide imageList={[
+    "/adventures/europe/italy/venice/IMG_1200.JPG",
+    "/adventures/europe/italy/venice/IMG_1205.JPG",
+  ]} />
+  <div>
+    <span className="text-lg md:text-xl text-(--green) font-bold">
+      [PLATZHALTER – Weiterer Abschnittstitel]
+    </span>
+    <br />
+    <p>[PLATZHALTER – Weitere Eindrücke und Tipps für einen Besuch in Venedig abseits der Touristenmassen.]</p>
+  </div>
+  <ImageSlider imageList={[
+    "/adventures/europe/italy/venice/IMG_1200.JPG",
+  ]} />
+</Section>
