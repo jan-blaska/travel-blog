@@ -1,6 +1,36 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import type { Metadata } from 'next';
 import destinations from './destinations';
 import Link from 'next/link';
+import { SITE_URL, buildAlternates } from '@/lib/metadata';
+
+const titles: Record<string, string> = { en: 'Adventures', cs: 'Dobrodružství', de: 'Abenteuer' };
+const descriptions: Record<string, string> = {
+  en: 'Explore travel adventures across Europe, Asia, Africa and the Americas.',
+  cs: 'Prozkoumejte cestovatelská dobrodružství v Evropě, Asii, Africe a Americe.',
+  de: 'Entdecke Reiseabenteuer in Europa, Asien, Afrika und Amerika.',
+};
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const title = titles[locale] ?? titles.en;
+  const description = descriptions[locale] ?? descriptions.en;
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `${SITE_URL}/${locale}/adventures`,
+      languages: buildAlternates('/adventures'),
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${SITE_URL}/${locale}/adventures`,
+      type: 'website',
+      locale,
+    },
+  };
+}
 
 export default async function Adventures({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;

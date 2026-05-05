@@ -9,6 +9,7 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '../../i18n/routing';
+import { SITE_URL, SITE_NAME, siteDescription } from '@/lib/metadata';
 
 const albertSans = Albert_Sans({
   subsets: ["latin"],
@@ -43,9 +44,22 @@ const cinzel = Cinzel({
   variable: "--font-cinzel"
 })
 
-export const metadata: Metadata = {
-  title: 'JAN UKU TRAVEL',
-  description: 'travel diaries, travel tips',
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const description = siteDescription(locale);
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: {
+      default: SITE_NAME,
+      template: `%s | ${SITE_NAME}`,
+    },
+    description,
+    openGraph: {
+      siteName: SITE_NAME,
+      locale,
+      type: 'website',
+    },
+  };
 }
 
 export function generateStaticParams() {
@@ -70,9 +84,19 @@ export default async function LocaleLayout({
   const themeCookie = cookieStore.get('theme')?.value;
   const resolvedTheme = themeCookie === 'dark' ? 'dark' : themeCookie === 'light' ? 'light' : undefined;
 
+  const personSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Uku Jan',
+    url: SITE_URL,
+    description: siteDescription('en'),
+    jobTitle: 'Travel Blogger',
+  };
+
   return (
     <html suppressHydrationWarning lang={locale} className={resolvedTheme ?? ''}>
       <body className={`${albertSans.className} ${montserratAlternates.variable} ${comforterBrush.variable} ${barlowCondensed.variable} ${cinzel.variable}`}>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
         <NextIntlClientProvider>
           <ThemeProvider>
             <header>

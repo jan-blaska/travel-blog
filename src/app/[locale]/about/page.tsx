@@ -1,4 +1,28 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import type { Metadata } from 'next';
+import { SITE_URL, buildAlternates } from '@/lib/metadata';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'About' });
+  const title = t('Header.Title');
+  const description = t('Header.Subtitle');
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `${SITE_URL}/${locale}/about`,
+      languages: buildAlternates('/about'),
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${SITE_URL}/${locale}/about`,
+      type: 'profile',
+      locale,
+    },
+  };
+}
 
 export default async function About({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
