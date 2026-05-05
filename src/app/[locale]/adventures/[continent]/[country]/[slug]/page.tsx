@@ -8,6 +8,7 @@ import ImageSlider from "@/components/ImageSlider";
 import ImageNextToImage from "@/components/ImageNextToImage";
 import MainHeader from "@/components/MainHeader";
 import CardLink from "@/components/CardLink";
+import Section from "@/components/Section";
 import { notFound } from "next/navigation";
 import Breadcrumb from "@/app/[locale]/components/Breadcrumb";
 import destinationsList from "@/app/[locale]/adventures/destinations";
@@ -73,6 +74,7 @@ export default async function ArticlePage({ params }: {
       ImageSlider,
       MainHeader,
       CardLink,
+      Section,
     }
   });
 
