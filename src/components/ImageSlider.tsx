@@ -7,10 +7,11 @@ import { getImageSrc } from "@/lib/image";
 
 type Props = {
     imageList: string[];
+    portrait?: boolean;
     className?: string;
 }
 
-export default function ImageSlider({ imageList = [], className }: Props) {
+export default function ImageSlider({ imageList = [], portrait = false, className }: Props) {
     const [isAnimating, setIsAnimating] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -53,15 +54,24 @@ export default function ImageSlider({ imageList = [], className }: Props) {
 
     return (
         <div className={clsx("relative flex w-full aspect-[3/2] rounded-xl overflow-hidden", className)}>
-            {imageList.map((src, index) =>
+            {imageList.map((src, index) => portrait ? (
+                <div
+                    key={index}
+                    className="relative w-full h-full flex-shrink-0 transition-all duration-1000 ease-in-out"
+                    style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                >
+                    <img src={getImageSrc(src)} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-60" />
+                    <img src={getImageSrc(src)} alt={`Slide ${index + 1}`} className="relative w-full h-full object-contain z-10" />
+                </div>
+            ) : (
                 <img
                     key={index}
                     src={getImageSrc(src)}
                     alt={`Slide ${index + 1}`}
                     style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-                    className={`w-full h-full object-cover flex-shrink-0 transition-all duration-1000 ease-in-out`}
+                    className="w-full h-full object-cover flex-shrink-0 transition-all duration-1000 ease-in-out"
                 />
-            )}
+            ))}
             <button
                 disabled={isAnimating}
                 onClick={() => {

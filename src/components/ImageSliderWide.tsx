@@ -7,15 +7,25 @@ import { getImageSrc } from "@/lib/image";
 
 type Props = {
     imageList: string[];
+    portrait?: boolean;
     className?: string;
 };
 
-export default function ImageSliderWide({ imageList = [], className }: Props) {
+export default function ImageSliderWide({ imageList = [], portrait = false, className }: Props) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     return (
         <div className={clsx("relative flex w-full aspect-[3/2] rounded-xl overflow-hidden", className)}>
-            {imageList.map((src, index) => (
+            {imageList.map((src, index) => portrait ? (
+                <div
+                    key={index}
+                    className="relative w-full h-full flex-shrink-0 transition-transform duration-700 ease-in-out"
+                    style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                >
+                    <img src={getImageSrc(src)} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-60" />
+                    <img src={getImageSrc(src)} alt={`Slide ${index + 1}`} className="relative w-full h-full object-contain z-10" />
+                </div>
+            ) : (
                 <img
                     key={index}
                     src={getImageSrc(src)}
