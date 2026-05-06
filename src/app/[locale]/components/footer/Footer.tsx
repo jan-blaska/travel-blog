@@ -20,7 +20,6 @@ export default function Footer() {
                             <div className="w-full flex flex-col md:flex-row justify-between gap-4 md:gap-0 items-center sm:items-start">
                                 <div className="flex flex-col text-md">
                                     <Link className="hover:text-(--green)" href="/adventures">{t('Adventures')}</Link>
-                                    <Link className="hover:text-(--green)" href="/travel-tips">{t('TravelTips')}</Link>
                                     <Link className="hover:text-(--green)" href="/about">{t('AboutMe')}</Link>
                                 </div>
                                 <div className="flex flex-col items-center sm:items-start md:items-center gap-2">

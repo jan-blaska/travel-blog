@@ -13,7 +13,6 @@ const Navbar = () => {
     const t = useTranslations('Navbar')
 
     const navLinks = [
-        { href: "/travel-tips", label: t('TravelTips') },
         { href: "/adventures", label: t('Adventures') },
         { href: "/about", label: t('AboutMe') },
     ]
