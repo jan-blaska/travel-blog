@@ -11,6 +11,7 @@ import ImageSlider from "@/components/ImageSlider";
 import ImageSliderWide from "@/components/ImageSliderWide";
 import CardLink from "@/components/CardLink";
 import MainHeader from "@/components/MainHeader";
+import SubHeader from "@/components/SubHeader";
 import Section from "@/components/Section";
 import Breadcrumb from "@/app/[locale]/components/Breadcrumb";
 import destinationsList from "@/app/[locale]/adventures/destinations";
@@ -116,6 +117,7 @@ export default async function CountryPage({ params }: {
       ImageSliderWide,
       CardLink,
       MainHeader,
+      SubHeader,
       Section,
     }
   });

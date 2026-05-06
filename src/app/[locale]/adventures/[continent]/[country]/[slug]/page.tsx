@@ -9,6 +9,7 @@ import ImageSliderWide from "@/components/ImageSliderWide";
 import ImageSlider from "@/components/ImageSlider";
 import ImageNextToImage from "@/components/ImageNextToImage";
 import MainHeader from "@/components/MainHeader";
+import SubHeader from "@/components/SubHeader";
 import CardLink from "@/components/CardLink";
 import Section from "@/components/Section";
 import { notFound } from "next/navigation";
@@ -120,6 +121,7 @@ export default async function ArticlePage({ params }: {
       ImageSliderWide,
       ImageSlider,
       MainHeader,
+      SubHeader,
       CardLink,
       Section,
     }

@@ -16,7 +16,6 @@ const Navbar = () => {
         { href: "/travel-tips", label: t('TravelTips') },
         { href: "/adventures", label: t('Adventures') },
         { href: "/about", label: t('AboutMe') },
-        { href: "/contact", label: t('Contact') },
     ]
 
     return (

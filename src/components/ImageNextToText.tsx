@@ -3,6 +3,7 @@ import { getImageSrc } from "@/lib/image";
 
 type ImageWidth = "narrow" | "medium" | "wide";
 type ImageFit = "cover" | "contain";
+type ImagePosition = "top" | "center" | "bottom";
 
 type Props = {
     children: React.ReactNode;
@@ -12,6 +13,8 @@ type Props = {
     className?: string;
     imageWidth?: ImageWidth;
     fit?: ImageFit;
+    maxHeight?: string;
+    imagePosition?: ImagePosition;
 }
 
 const widthClasses: Record<ImageWidth, { image: string; text: string }> = {
@@ -20,9 +23,15 @@ const widthClasses: Record<ImageWidth, { image: string; text: string }> = {
     wide:   { image: "md:w-2/3", text: "md:w-1/3" },
 };
 
+const positionClasses: Record<ImagePosition, string> = {
+    top: "object-top",
+    center: "object-center",
+    bottom: "object-bottom",
+};
+
 export default function ImageNextToText({
     children, imageSrc, imageAlt = "", reverse = false, className,
-    imageWidth = "medium", fit = "cover",
+    imageWidth = "medium", fit = "cover", maxHeight, imagePosition,
 }: Props) {
     const widths = widthClasses[imageWidth];
     return (
@@ -30,10 +39,13 @@ export default function ImageNextToText({
             <img
                 src={getImageSrc(imageSrc)}
                 alt={imageAlt}
+                style={maxHeight ? { maxHeight } : undefined}
                 className={clsx(
                     "w-full rounded-lg md:rounded-2xl shadow-md",
                     widths.image,
-                    fit === "cover" && "object-cover md:max-h-96"
+                    fit === "cover" && "object-cover",
+                    !maxHeight && fit === "cover" && "md:max-h-96",
+                    imagePosition && positionClasses[imagePosition],
                 )}
             />
             <div className={clsx("w-full", widths.text)}>

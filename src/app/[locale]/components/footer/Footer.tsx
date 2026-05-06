@@ -22,7 +22,6 @@ export default function Footer() {
                                     <Link className="hover:text-(--green)" href="/adventures">{t('Adventures')}</Link>
                                     <Link className="hover:text-(--green)" href="/travel-tips">{t('TravelTips')}</Link>
                                     <Link className="hover:text-(--green)" href="/about">{t('AboutMe')}</Link>
-                                    <Link className="hover:text-(--green)" href="/contact">{t('Contact')}</Link>
                                 </div>
                                 <div className="flex flex-col items-center sm:items-start md:items-center gap-2">
                                     <span>{t('SocialMediaPrompt')}</span>
