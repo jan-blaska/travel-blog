@@ -44,7 +44,6 @@ export default function ImageNextToText({
                     "w-full rounded-lg md:rounded-2xl shadow-md",
                     widths.image,
                     fit === "cover" && "object-cover",
-                    !maxHeight && fit === "cover" && "md:max-h-96",
                     imagePosition && positionClasses[imagePosition],
                 )}
             />
