@@ -8,6 +8,7 @@ import ImageNextToText from "@/components/ImageNextToText";
 import ImageSliderWide from "@/components/ImageSliderWide";
 import ImageSlider from "@/components/ImageSlider";
 import ImageNextToImage from "@/components/ImageNextToImage";
+import FullWidthImage from "@/components/FullWidthImage";
 import MainHeader from "@/components/MainHeader";
 import SubHeader from "@/components/SubHeader";
 import CardLink from "@/components/CardLink";
@@ -120,6 +121,7 @@ export default async function ArticlePage({ params }: {
       ImageNextToImage,
       ImageSliderWide,
       ImageSlider,
+      FullWidthImage,
       MainHeader,
       SubHeader,
       CardLink,

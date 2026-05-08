@@ -9,6 +9,7 @@ import ImageNextToText from "@/components/ImageNextToText";
 import ImageNextToImage from "@/components/ImageNextToImage";
 import ImageSlider from "@/components/ImageSlider";
 import ImageSliderWide from "@/components/ImageSliderWide";
+import FullWidthImage from "@/components/FullWidthImage";
 import CardLink from "@/components/CardLink";
 import MainHeader from "@/components/MainHeader";
 import SubHeader from "@/components/SubHeader";
@@ -115,6 +116,7 @@ export default async function CountryPage({ params }: {
       ImageNextToImage,
       ImageSlider,
       ImageSliderWide,
+      FullWidthImage,
       CardLink,
       MainHeader,
       SubHeader,
