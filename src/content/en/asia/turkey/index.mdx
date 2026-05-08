@@ -2,8 +2,34 @@
 title: "Turkey"
 ---
 
-<ImageNextToText imageSrc="/countries/turkey/mosque-istanbul.jpg" imageAlt="Hagia Sofia mosque" reverse={true}>
-  <span className="text-xl md:text-2xl">
-    Welcome to country, where East meets West. Explore captivating history, stunning landscapes, and the genuine hospitality of its people.
-  </span>
-</ImageNextToText>
+<Section topSection>
+  <ImageNextToText imageSrc="/countries/turkey/mosque-istanbul.jpg" imageAlt="Hagia Sophia Mosque" reverse={true}>
+    <span className="text-xl md:text-2xl">
+      Welcome to the country where East meets West. Turkey is a continent unto itself: Byzantine churches, Ottoman mosques, steaming hammams, the Turkish breakfast as an art form, and coastlines that belong equally to the Mediterranean and the Black Sea. Istanbul alone could captivate you for weeks — and yet there would still be so much more to discover.
+    </span>
+  </ImageNextToText>
+</Section>
+
+<Section>
+  <MainHeader>Adventures</MainHeader>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+    <CardLink
+      title="Istanbul"
+      description="An Erasmus semester in Istanbul — the beginning of a long travel story, among mosques, the Bosphorus, and the first steps of life abroad."
+      href="/en/adventures/asia/turkey/istanbul"
+      image="/adventures/asia/turkey/istanbul/P9300377.JPG"
+    />
+    <CardLink
+      title="Pamukkale"
+      description="White limestone terraces with natural pools — a trip from Istanbul to one of Turkey's surreal natural wonders."
+      href="/en/adventures/asia/turkey/pammukale"
+      image="/adventures/asia/turkey/pammukale/P9270365.JPG"
+    />
+    <CardLink
+      title="Eastern Turkey"
+      description="By rental car through eastern Turkey — green tea plantations around Rize, the cities of Kars and Erzurum, and the warmth of people in a remote land."
+      href="/en/adventures/asia/turkey/eastern-turkey"
+      image="/adventures/asia/turkey/eastern-turkey/085.JPG"
+    />
+  </div>
+</Section>
