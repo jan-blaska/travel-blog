@@ -15,7 +15,7 @@
             "LetsExplore": "lets explore with me some adventure 📷."
         },
         "Map": {
-            "Prompt": "Click on the country you are interested in"
+            "Description": "Countries I have already visited."
         },
         "Citation": {
             "Text": "The journey of a thousand miles begins with one step.",

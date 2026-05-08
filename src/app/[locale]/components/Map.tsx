@@ -15,7 +15,7 @@ interface MapProps {
     zoom: number,
 }
 
-const visitedCountries = ["Czechia", "Spain", "Germany", "Italy", "GBR", "Israel", "France", "MAR", "Norway", "Sweden", "Finland", "Poland", "Romania", "Portugal", "Slovakia", "Austria", "Switzerland", "Hungary", "Croatia", "Philippines", "Turkey", "Greece", "Albania", "Netherlands", "Bulgaria", "Serbia", "Montenegro", "Slovenia"];
+const visitedCountries = ["Czechia", "Spain", "Germany", "Dominican Republic", "Italy", "GBR", "Israel", "Jordan", "France", "MAR", "Norway", "Sweden", "Finland", "Poland", "Romania", "Portugal", "Slovakia", "Austria", "Switzerland", "Hungary", "Croatia", "Philippines", "Turkey", "Greece", "Albania", "Netherlands", "Bulgaria", "SRB", "Montenegro", "Slovenia", "Thailand", "Estonia"];
 
 const Map = ({ zoom, posix }: MapProps) => {
     const [geoData, setGeoData] = useState<GeoJsonObject | null>(null)

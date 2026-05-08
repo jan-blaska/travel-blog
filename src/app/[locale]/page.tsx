@@ -50,7 +50,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <span className="py-2 ml-16 pl-6 border-l-8 text-(--orange) text-4xl md:text-5xl uppercase font-barlow-condensed ">{t('Greeting.Welcome')}</span>
             <span className="text-2xl md:text-3xl font-barlow-condensed leading-loose">{t('Greeting.MakeATea')}<span className="bg-[#E2E2E2] p-2 text-black">{t('Greeting.LetsExplore')}</span></span>
           </div>
-          <p className="mt-8 md:mt-16 text-center">{t('Map.Prompt')}</p>
+          <p className="mt-8 md:mt-16 text-center">{t('Map.Description')}</p>
           <div className="h-[600px] z-0">
             <MapClient posix={[20, 20]} zoom={2} />
           </div>
