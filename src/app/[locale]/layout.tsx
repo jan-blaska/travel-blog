@@ -2,7 +2,7 @@ import "./globals.css";
 import { Albert_Sans, Montserrat_Alternates, Comforter_Brush, Barlow_Condensed, Cinzel } from "next/font/google"
 import ThemeProvider from "@/components/ThemeProvider"
 import { cookies } from 'next/headers'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
@@ -44,6 +44,12 @@ const cinzel = Cinzel({
   variable: "--font-cinzel"
 })
 
+export const viewport: Viewport = {
+  themeColor: '#2d7a4f',
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const description = siteDescription(locale);
@@ -58,6 +64,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       siteName: SITE_NAME,
       locale,
       type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: '@janukutravel',
+      creator: '@janukutravel',
     },
   };
 }

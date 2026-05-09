@@ -30,7 +30,12 @@
       "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\honza\\\\Desktop\\\\programovani\\\\travel-blog\\\\src\" -Depth 1 | Where-Object { $_.PSIsContainer } | Select-Object Name)",
       "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\honza\\\\Desktop\\\\programovani\\\\travel-blog\\\\src\" | Where-Object { $_.PSIsContainer })",
       "Bash(Select-Object FullName, PSIsContainer)",
-      "Bash(Format-Table -AutoSize)"
+      "Bash(Format-Table -AutoSize)",
+      "Bash(Select-Object Name, FullName)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(Copy-Item \"C:\\\\Users\\\\honza\\\\Desktop\\\\programovani\\\\travel-blog\\\\public\\\\favicon_io\\\\favicon.ico\" \"C:\\\\Users\\\\honza\\\\Desktop\\\\programovani\\\\travel-blog\\\\src\\\\app\\\\favicon.ico\" -Force)",
+      "Bash(Copy-Item \"C:\\\\Users\\\\honza\\\\Desktop\\\\programovani\\\\travel-blog\\\\public\\\\favicon_io\\\\apple-touch-icon.png\" \"C:\\\\Users\\\\honza\\\\Desktop\\\\programovani\\\\travel-blog\\\\src\\\\app\\\\apple-icon.png\" -Force)",
+      "Bash(Copy-Item \"C:\\\\Users\\\\honza\\\\Desktop\\\\programovani\\\\travel-blog\\\\public\\\\favicon_io\\\\android-chrome-192x192.png\" \"C:\\\\Users\\\\honza\\\\Desktop\\\\programovani\\\\travel-blog\\\\src\\\\app\\\\icon.png\" -Force)"
     ]
   }
 }
