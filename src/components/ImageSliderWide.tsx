@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import clsx from "clsx";
 import { getImageSrc } from "@/lib/image";
@@ -13,9 +13,26 @@ type Props = {
 
 export default function ImageSliderWide({ imageList = [], portrait = false, className }: Props) {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const touchStartX = useRef<number | null>(null);
+
+    const handleTouchStart = (e: React.TouchEvent) => {
+        touchStartX.current = e.touches[0].clientX;
+    };
+
+    const handleTouchEnd = (e: React.TouchEvent) => {
+        if (touchStartX.current === null) return;
+        const delta = touchStartX.current - e.changedTouches[0].clientX;
+        if (delta > 50 && currentIndex < imageList.length - 1) setCurrentIndex(prev => prev + 1);
+        else if (delta < -50 && currentIndex > 0) setCurrentIndex(prev => prev - 1);
+        touchStartX.current = null;
+    };
 
     return (
-        <div className={clsx("relative flex w-full aspect-[3/2] rounded-xl overflow-hidden", className)}>
+        <div
+            className={clsx("relative flex w-full aspect-[3/2] rounded-xl overflow-hidden", className)}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+        >
             {imageList.map((src, index) => portrait ? (
                 <div
                     key={index}

@@ -15,6 +15,7 @@ export default function ImageSlider({ imageList = [], portrait = false, classNam
     const [isAnimating, setIsAnimating] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+    const touchStartX = useRef<number | null>(null);
 
     function resetTimeout() {
         if (timeoutRef.current) {
@@ -52,8 +53,24 @@ export default function ImageSlider({ imageList = [], portrait = false, classNam
         setCurrentIndex((prev) => (prev + 1) % imageList.length);
     };
 
+    const handleTouchStart = (e: React.TouchEvent) => {
+        touchStartX.current = e.touches[0].clientX;
+    };
+
+    const handleTouchEnd = (e: React.TouchEvent) => {
+        if (touchStartX.current === null) return;
+        const delta = touchStartX.current - e.changedTouches[0].clientX;
+        if (delta > 50) goToNext();
+        else if (delta < -50) goToPrevious();
+        touchStartX.current = null;
+    };
+
     return (
-        <div className={clsx("relative flex w-full aspect-[3/2] rounded-xl overflow-hidden", className)}>
+        <div
+            className={clsx("relative flex w-full aspect-[3/2] rounded-xl overflow-hidden", className)}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+        >
             {imageList.map((src, index) => portrait ? (
                 <div
                     key={index}
