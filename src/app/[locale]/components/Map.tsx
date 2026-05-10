@@ -19,12 +19,8 @@ const visitedCountries = ["Czechia", "Spain", "Germany", "Dominican Republic", "
 
 const Map = ({ zoom, posix }: MapProps) => {
     const [geoData, setGeoData] = useState<GeoJsonObject | null>(null)
-    const [isTouchDevice, setIsTouchDevice] = useState(false)
+    const [isTouchDevice] = useState(() => window.matchMedia('(pointer: coarse)').matches)
     const { resolvedTheme } = useTheme()
-
-    useEffect(() => {
-        setIsTouchDevice(window.matchMedia('(pointer: coarse)').matches)
-    }, [])
 
     useEffect(() => {
         fetch("/data/world-countries.geo.json")
