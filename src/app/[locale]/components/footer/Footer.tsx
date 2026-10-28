@@ -30,7 +30,7 @@ export default function Footer() {
                                             <img src="/footer/facebook.png" alt="facebook icon" />
                                         </a>
                                         <a className="bg-white w-8 h-8 rounded-full p-1"
-                                            href="https://www.instagram.com/honzablaska/">
+                                            href="https://www.instagram.com/jan.blaska/">
                                             <img src="/footer/instagram.png" alt="instagram icon" />
                                         </a>
 
