@@ -57,8 +57,10 @@ const Map = ({ zoom, posix }: MapProps) => {
             maxBoundsViscosity={1.0}
         >
             <TileLayer
-                attribution='&copy; OpenStreetMap contributors, &copy; CARTO'
-                url={`https://{s}.basemaps.cartocdn.com/${resolvedTheme === 'dark' ? "dark" : "light"}_all/{z}/{x}/{y}{r}.png`}
+                key={resolvedTheme}
+                attribution='Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ'
+                url={`https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_${resolvedTheme === 'dark' ? "Dark" : "Light"}_Gray_Base/MapServer/tile/{z}/{y}/{x}`}
+                maxNativeZoom={16}
                 noWrap={true}
             />
             {geoData && <GeoJSON data={geoData} style={styleFeature} />}
